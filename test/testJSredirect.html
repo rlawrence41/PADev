@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Test Javascript Redirect</h1>
+
+<button onclick="myAssign()">Assign new document</button>
+<br/>
+<br/>
+<button onclick="myReplace()">Replace to document</button>
+
+<script>
+function myAssign() {
+  location.assign("testJSRedirectTarget.html?mode=assign")
+}
+
+function myReplace() {
+  location.replace("testJSRedirectTarget.html?mode=replace")
+}
+</script>
+
+</body>
+</html> 

@@ -1,0 +1,6 @@
+spec_no,title_id,author_no,threshold,discount,rate,net,when_ordrd,entered_by,lupdate
+1,"DEMO 1",2,0,0.00,10.00,F,F,"STC",10/9/1999
+2,"DEMO 1",2,5000,0.00,15.00,F,F,"STC",10/9/1999
+3,"DIRECTORY",2,0,0.00,10.00,T,F,"STC",10/9/1999
+4,"DIRECTORY",2,0,50.00,5.00,T,F,"STC",10/9/1999
+5,"DEMO 2",13,0,0.00,15.00,T,F,"RWL",3/29/2001

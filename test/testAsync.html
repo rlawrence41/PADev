@@ -1,0 +1,28 @@
+<h2>JavaScript async / await</h2>
+
+<p>This procedure uses an async function to post a request to the REST API.</p>
+
+<p id="demo"></p>
+
+<script>
+async function getFile() {
+  let myPromise = new Promise(function(resolve) {
+    let req = new XMLHttpRequest();
+    req.open('GET', "https://dev.pubassist.com/common/rest/contact.php/contact?compare=relaxed&sortBy=first_name&limit=10&searchVal=SMI");
+    req.onload = function() {
+      if (req.status == 200) {
+        resolve(req.response);
+      } else {
+        resolve("File not Found");
+      }
+    };
+    req.send();
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+
+getFile();
+</script>
+
+</body>
+</html>

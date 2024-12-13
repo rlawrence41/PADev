@@ -1,0 +1,66 @@
+<!-- Group Header Start -->
+<link rel="stylesheet" href="ui/css/customerReturn.css">
+<div class="reportTitle">
+<h3>{title}</h3>
+</div>
+
+<table class="no-borders">
+<tr>
+	<th><img class="logo" src="/images/pubassist-logo.jpg" /></th>
+	<th><h2>Publishers' Assistant</h2></th>
+</tr>
+</table>
+<table class="no-borders">
+<tr>
+	<th width="100%"><h1>Return Credit Memo</h1></th>
+</tr>
+</table>
+<table class="no-inner-borders">
+<tr>
+	<th class="transNav" id="order" width="20%"
+		title="Click to edit the customer return."
+		onclick='launchStep({id}, "Customer Return", "id", {id})'>
+		<h3>Return No.</h3>
+	</th>
+	<th width="60%"><h3>&nbsp;</h3></th>
+	<th width="20%"><h3>Entry Date</h3></th>
+</tr>
+<tr>
+	<th width="20%">
+		{orderNo}
+	</th>
+	
+	<th width="60%">&nbsp;</th>
+	<th width="20%">{orderDate}</th>
+</tr>
+</table>
+<table>
+<tr>
+	<td class="transNav" id="customer" 
+		title="Click to select the billing contact to credit for this return."
+		onclick='launchStep({id}, "Credit To", "id", {customerNo})'>
+		Credit To:
+	</th>
+	<td class="transNav" id="shipTo" 
+		title="Click to select the shipping contact for this return."
+		onclick='launchStep({id}, "Return From", "id", {shipToNo})'>
+		Shipping From:
+	</th>
+</tr>
+<tr>
+	<th width="50%" height="70px">
+		{customerIdSearch}
+	</td>	
+	<th width="50%" height="70px">
+		{shipToAddr}
+	</td>
+</tr>
+</table>
+
+<!-- Group Header End -->
+
+<!-- CustomerOrder Detail Start -->
+<div id="detailTable" 
+	title="Click on the column headers to enter or edit items for this return."
+	onclick='launchStep({id}, "Items", "orderKey", {id})'>
+

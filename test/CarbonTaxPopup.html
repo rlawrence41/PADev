@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 50px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 20px;
+  box-shadow: 10px 10px #888888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+</style>
+</head>
+<body>
+
+<h2>Simple Modal Example</h2>
+
+<!-- Trigger/Open The Modal -->
+<!--button id="myBtn">Open Modal</button-->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+		<section>
+		<div>
+		<div style="background-color: #303030;clear: both;">
+		<h2><span style="color: #ffffff;"><br />Did you know... </span></h2>
+		</div>
+		</div>
+		</section>
+		<section>
+		<div>
+		<h2 style="text-align: center;">EVERY DEMOCRAT Legislator from <br />Chittenden County <br />VOTED for a CARBON TAX on home heating fuels?</h2>
+		</div>
+		<div>
+		<p dir="ltr">That’s right! Every Democrat Rep and Senator voted for a “Clean Heat Standard” Carbon Tax <a href="https://www.google.com/url?q=https%3A%2F%2Flegislature.vermont.gov%2Fbill%2Fstatus%2F2022%2FH.715&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0xjhxRkvHPAxt8ot1teVzu" target="_blank" rel="noopener">(H.715)</a> on oil, propane, natural gas, and kerosene to purposefully drive up the cost so you can’t afford to use fossil fuels. Then they voted again to override Gov. Scott’s veto of this horrible tax on heating our homes. Next on their agenda is a tax on gasoline and diesel.</p>
+		</div>
+		</section>
+		<section>
+		<div>
+		<div style="float: left;padding-right:20px;">
+		<img src="https://app.ccgopvt.org/images/NoCarbonTax.png" alt="" width="200px" height="200px" />
+		</div>
+		<div>
+		<h2>
+			<strong>EVERY VT REPUBLICAN </strong>
+			<span style="color: #ff0000;"><strong>OPPOSES</strong></span>
+			<strong> THE HOME HEAT CARBON TAX</strong>
+		</h2>
+		
+		<div>
+		<p dir="ltr">because Republicans understand the real financial challenges facing Vermonters; and now is NOT the time to raise the cost of heating our homes and driving our cars with more unaffordable taxes!</p>
+		<h3 style="text-align: center;"><strong>Your Vote has consequences.</strong></h3>
+		<h3 style="text-align: center;"><span style="color: #ff0000;"><strong>Vote Republican!</strong></span></h3>
+		</div>
+		</div>
+		</div>
+
+		</section>
+		<section>
+		<div style="background-color: #303030;">
+		<h2 style="text-align: center;"><span style="color: #ffffff;">Stop the Democrat’s Carbon Taxes! Vote Republican in 2022. </span><br /><span style="color: #ffffff;text-align: center;">(Early voting September 26-November 8th)</span></h2>
+		<p dir="ltr" style="text-align: center;"><span style="color: #ffffff;">Paid for by the Chittenden County Republicans, PO Box 204, Jonesville, VT 05466</span></p>
+		</div>
+		</section>
+
+
+
+
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+//btn.onclick = function() {
+//  modal.style.display = "block";
+//}
+
+// When the user clicks the button, open the modal 
+window.onload = function() {
+  modal.style.display = "block";
+}
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>

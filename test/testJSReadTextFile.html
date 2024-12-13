@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Read File</title>
+    <script>
+    function readFileA () {
+      // (A) GET SELECTED FILE
+      let selected = document.getElementById("demoPickA").files[0];
+
+      // (B) READ SELECTED FILE
+      let reader = new FileReader();
+	  
+/*	  reader.onprogress = function(event) {
+		//document.getElementById("sample3").innerHTML = 'received event: ' + event.type;
+		document.write = 'received event: ' + event.type;
+	  };
+ */
+      reader.addEventListener("waiting", (event) => {
+        document.getElementById("demoShowA").innerHTML = event.type;
+      });
+		
+      reader.addEventListener("loadend", () => {
+        document.getElementById("demoShowB").innerHTML = reader.result;
+      });
+      reader.readAsText(selected);
+    }
+    </script>
+  </head>
+  <body>
+    <input type="file" value="Choose CSV File" id="demoPickA"
+           accept="text/*.txt,text/*.csv" onchange="readFileA()"
+		   onwaiting="showProgress"/>
+    <div id="demoShowA"></div>
+    <div id="demoShowB"></div>
+  </body>
+</html>

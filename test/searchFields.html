@@ -1,0 +1,54 @@
+<div class="searchFieldContainer" id="sf_title_no">
+
+			<div class="form-group">
+				<input type="hidden" 
+					class="form-control data-set" 
+					id="title_no" 
+					name="column[title_no]" 
+					value="2">
+				</div>
+
+			<div class="form-group">
+				<label for="searchField">Title</label>
+				<input type="text" class="form-control" 
+					id="title_noSearch" 
+					value="" 
+					placeholder="Enter the title.  Preface with " %'="" to="" search="" for="" a="" keyword.'="" 
+					autocomplete="off" 
+					onfocus="this.select();repositionList(this)" 
+					onkeyup="refreshList(this, &quot;/title/titleREST.php/title&quot;)">
+			</div>
+
+<link rel="stylesheet" type="text/css" href="common/ui/css/searchList.css">
+			<div class="searchList" id="title_noList" style="display: none;">
+			  <ul>
+				<li disabled="">The search list is empty.</li>
+			  </ul>
+			</div>
+<script src="common/ui/js/searchList.js"></script>
+
+		</div>
+		
+		
+
+
+
+<div class="searchFieldContainer" id="sf_payeeId">
+
+			<div class="form-group">
+				<input type="hidden" class="form-control data-set" id="payeeId" name="column[payeeId]" value="2">
+			</div>
+
+			<div class="form-group">
+				<label for="searchField">Payee</label>
+				<input type="text" class="form-control" id="payeeIdSearch" value="" placeholder="Last Name, First Name, Company, or email" autocomplete="off" onfocus="this.select();repositionList(this)" onkeyup="refreshList(this, &quot;/contact/contactREST.php/contact&quot;)">
+			</div>
+
+<link rel="stylesheet" type="text/css" href="common/ui/css/searchList.css">
+			<div class="searchList" id="payeeIdList" style="display: block;"><ul>
+<li id="2" onclick="selectItem(this)">Upper Access Books, Inc., CARLSON, STEVE, PO BOX 364, HINESBURG, VT, 05461, , </li>
+</ul>
+</div>
+<script src="common/ui/js/searchList.js"></script>
+
+		</div>

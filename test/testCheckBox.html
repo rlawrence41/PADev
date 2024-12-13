@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+/* Test 3 uses jQuery. */
+</script-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+/*
+	Test 1 procedures...
+ */
+
+function myCheck(checkBoxElement){
+
+//	alert("Checkbox is " + checkBoxElement.checked);
+	
+    if (checkBoxElement.checked){
+    	checkBoxElement.value = true;
+    }
+    else {
+    	checkBoxElement.value = false;
+    }
+	
+	var message = checkBoxElement.name + " is set to " + checkBoxElement.value;
+//    alert(message);
+    document.getElementById("demo").innerHTML = message;
+
+}
+
+function myClick(){
+
+    var message;
+	message = "Here I am.";
+//	alert(message);
+    document.getElementById("demo").innerHTML = message;
+}
+
+/*
+	Test 2 procedures...
+ */
+
+function myFunction() {
+  var checkBox2 = document.getElementById("myCheck");
+  document.getElementById("demo").innerHTML = checkBox2.value;
+}
+
+
+/*
+	Test 3 procedures...
+ */
+ 
+$(document).ready(function(){			
+
+	// Set a checkbox element's value when clicked.
+  $("[type=checkbox]").click(function(){
+// 	var rValue = $(this).prop("checked");
+//	var cbId = $(this).attr("name");
+	var rValue = this.value;
+    var cbId = this.name;
+    $(this).val(rValue);
+  	alert("jQuery: " + cbId + " was set to " + rValue);
+  });
+
+});
+
+
+</script>
+
+</head>
+<body>
+
+<h1>Show checkboxes:</h1>
+
+<!--form action="/action_page.php" -->
+<form action="#">
+  <input type="checkbox" name="vehicle1" value="false" onclick="myCheck(this)">
+  I have a bike<br>
+  <input type="checkbox" name="vehicle2" value="false" onclick="myCheck(this)">
+  I have a car<br>
+  <input type="checkbox" name="vehicle3" value="true" checked onclick="myCheck(this)">
+  I have a boat<br><br>
+  <input type="button" value="Submit" onclick="myClick()">
+</form>
+<p id="demo"></p>
+
+
+<h2>Test 2</h2>
+
+Checkbox: <input type="checkbox" id="myCheck">
+
+<p>Click the "Try it" button to find out whether the checkbox is checked, or not.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<h2>Test 3</h2>
+<p>This test uses jQuery to pick up on a click to a checkbox.</p>
+Result of the click:  <p id="demo2"></p>
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+  $("[class=choose]").click(function(){
+  	$(this).css("background-color", "yellow");
+  });
+  
+  $("[type=checkbox]").click(function(){
+  	var rValue = $(this).prop("checked");
+    $(this).val(rValue);
+  	alert(this.id + " was set to " + rValue);
+  });
+
+  
+});
+</script>
+</head>
+<body>
+
+<h1>CheckBox Test</h1>
+
+
+<form action="#">
+	<input type="checkbox" id="boolean1" />1
+    <input type="checkbox" id="boolean2" />2
+    <input type="checkbox" id="boolean3" />3
+    <input type="checkbox" id="boolean4" checked />4
+</form>
+
+</body>
+</html>

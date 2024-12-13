@@ -1,0 +1,19 @@
+<?php 
+include_once ("includes.php"); 
+
+// Erase the referring URL from the SESSION.
+unset($_SESSION['HTTP_REFERER']);
+
+?>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Sorry <?php echo friendlyName(); ?>,</h1>
+
+<p>You are not authorized for access to this application.</p>
+
+<p><a href="/">Return to the main menu.</a></p>
+</body>
+</html> 

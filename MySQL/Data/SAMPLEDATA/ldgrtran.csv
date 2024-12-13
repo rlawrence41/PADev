@@ -1,0 +1,33 @@
+transactno,trans_date,transevent,trans_type,account_no,acct_type,amount,doc_no,order_key,item_no,receipt_no,spec_no,exported,comment,entered_by,lupdate
+9,10/9/2021,"RECEIPT","Amount Rcvd",4,"A",-69.21,"",1,0,1,0,F,"Payment received for Invoice No. 1- 1 -- Thank you.","STC",2/18/2022
+10,10/9/2021,"RECEIPT","Royalty Fee",2,"L",2.50,"",1,3,1,1,F,"1 copy of DEMO 1, sold at $24.95 disc: 9.98%.","STC",2/18/2022
+11,10/9/2021,"RECEIPT","Consignment",18,"L",19.95,"",1,4,1,3,F,"Sale of 2 copies of DEMO 2, at $19.95 disc: 10.00%.","STC",2/18/2022
+14,10/9/2021,"ORDER","Order Total",6,"A",15.00,"",2,0,0,0,F,"Invoice no. 2- 1.","STC",2/18/2022
+13,10/9/2021,"RECEIPT","Amount Rcvd",6,"A",-15.00,"",2,0,2,0,F,"Payment received for Invoice No. 2- 1 -- Thank you.","STC",2/18/2022
+15,10/9/2021,"ORDER","Order Total",7,"A",55.95,"",7,0,0,0,F,"Invoice no. 5- 1.","STC",2/18/2022
+16,10/9/2021,"RECEIPT","Amount Rcvd",7,"A",-55.95,"",7,0,3,0,F,"Payment received for Invoice No. 5- 1 -- Thank you.","STC",2/18/2022
+17,10/9/2021,"RECEIPT","Royalty Fee",2,"L",5.00,"",7,13,3,3,F,"1 copy of DIRECTORY, sold at $49.95 disc: 0.00%.","STC",2/18/2022
+18,10/9/2021,"ORDER","Order Total",11,"A",5613.75,"",8,0,0,0,F,"Invoice no. 6- 1.","STC",2/18/2022
+20,10/9/2021,"RECEIPT","Amount Rcvd",12,"A",-25.95,"",9,0,4,0,F,"Payment received for Invoice No. 7- 1 -- Thank you.","STC",2/18/2022
+21,10/9/2021,"RECEIPT","Consignment",18,"L",9.98,"",9,15,4,3,F,"Sale of 1 copy of DEMO 2, at $19.95 disc: 0.00%.","STC",2/18/2022
+29,3/29/2021,"PAYMENT","Warehouse",2,"L",-75.00,"",0,0,0,4,F,"Fee for warehousing 9499 copies of FIRST DEMONSTRATION TITLE.","RWL",2/18/2022
+30,3/29/2021,"PAYMENT","Warehouse",13,"L",-50.00,"",0,0,0,2,F,"Fee for warehousing 1997 copies of DEMONSTRATION TITLE, CONSIGNMENT.","RWL",2/18/2022
+39,3/30/2021,"P.O.","Order Total",18,"L",3500.00,"",12,0,0,0,F,"RWL","03/",2/18/2022
+53,10/9/2021,"ORDER","Order Total",12,"A",25.95,"",9,0,0,0,F,"Invoice no. 7- 1.","RWL",2/18/2022
+55,10/9/2021,"ORDER","Order Total",4,"A",69.21,"",1,0,0,0,F,"Invoice no. 1- 1.","RWL",2/18/2022
+56,10/9/2021,"RECEIPT","Commission",5,"L",5.84,"",1,0,1,1,F,"Payment received from DEMO, THOMAS J, HINESBURG, VT for $58.37.","RWL",2/18/2022
+57,10/9/2021,"RECEIPT","Commission",5,"L",2.99,"",9,0,4,2,F,"Payment received from DEMO, DENNY, THISTLE JUNCTION, ME for $19.95.","RWL",2/18/2022
+60,3/29/2021,"ORDER","Order Total",11,"A",1795.50,"",11,0,0,0,F,"Invoice no. 8- 1.","RWL",2/18/2022
+87,11/29/2021,"RETURN","Return Total",11,"A",-1684.13,"",10,0,0,0,F,"Customer Return no. 1","RWL",2/18/2022
+88,11/29/2021,"RETURN","Royalty Fee",2,"L",-374.25,"",10,16,0,1,F,"150 copies of DEMO 1, returned at $24.95 discount: 55.00%.","RWL",2/18/2022
+96,11/30/2021,"RECEIPT","Royalty Fee",2,"L",374.25,"",8,14,8,1,F,"150 copies of DEMO 1, sold at $24.95 discount: 55.00%.","RWL",2/22/2022
+97,2/18/2022,"RECEIPT","Amount Rcvd",11,"A",-1122.75,"",0,0,10,0,F,"Payment received -- Thank you.","RWL",2/22/2022
+98,2/18/2022,"RECEIPT","Royalty Fee",2,"L",249.50,"",8,14,10,1,F,"100 copies of DEMO 1, sold at $24.95 discount: 55.00%.","RWL",2/22/2022
+101,3/9/2022,"RECEIPT","Amount Rcvd",13,"A",-24.95,"",15,0,11,0,F,"Payment received for Invoice No. 10- 1 -- Thank you.","RWL",3/9/2022
+102,3/9/2022,"RECEIPT","Royalty Fee",2,"L",2.50,"",15,38,11,1,F,"1 copy of DEMO 1, sold at $24.95","RWL",3/9/2022
+103,3/9/2022,"ORDER","Order Total",13,"A",24.95,"",15,0,0,0,F,"Invoice no. 10- 1.","RWL",3/9/2022
+104,3/9/2022,"RECEIPT","Amount Rcvd",11,"A",-740.92,"",0,0,12,0,F,"Payment received -- Thank you.","RWL",3/9/2022
+105,3/9/2022,"RECEIPT","Royalty Fee",2,"L",124.75,"",8,14,12,1,F,"50 copies of DEMO 1, sold at $24.95 discount: 55.00%.","RWL",3/9/2022
+106,3/9/2022,"RECEIPT","Royalty Fee",13,"L",26.93,"",11,19,12,5,F,"20 copies of DEMO 2, sold at $19.95 discount: 55.00%.","RWL",3/9/2022
+107,3/9/2022,"RECEIPT","Consignment",18,"L",179.55,"",11,19,12,4,F,"Sale of 20 copies of DEMO 2, at $19.95 disc: 55.00%.","RWL",3/9/2022
+108,4/9/2021,"ORDER","Order Total",16,"A",20.00,"",14,0,0,0,F,"Invoice no. 9- 1.","RWL",12/12/2023

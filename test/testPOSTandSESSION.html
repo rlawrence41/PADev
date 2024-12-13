@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+
+// Values submitted from the form will be used to select records from the resource.
+// This function gathers <input> element values into a query string.
+function myQueryString() {
+    var x = document.forms["testForm"];
+    var text = "?";
+    var i, y;
+    for (i = 0; i < x.length ;i++) {
+    	y = x.elements[i];
+    	if (y.className =="select" && y.value > "") {
+    		if (text.length > 1) {text+="&";}
+        	text += y.name + "=" + y.value;
+        }
+    }
+	
+	// To render the result as HTML, add the render parameter here.
+	if (text.length > 1) {text+="&render=HTML";}
+	else {text+="?render=HTML";}
+	
+    return text;
+}
+
+
+function loadXMLDoc(method){
+  var key = document.getElementById("transactionId").value + "/" ;
+  var jsondata = document.getElementById("json").value;
+  var server = "<?php echo $_SERVER['SERVER_NAME']; ?>";
+  var restURI = "https://" + server + "/rest/contact.php/contact" ; 
+  var xhttp = new XMLHttpRequest();
+  
+  // If a key value is specified, add it to the URL.
+  if (key > "") {restURI += "/" + key;}
+
+  // Pull input values into a query string.
+  var queryStr = myQueryString();
+  restURI += queryStr;
+  
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open(method, restURI, true);
+  xhttp.setRequestHeader('Content-Type', 'application/json');	// Expect a JSON encoded string.
+  xhttp.send(jsondata);	// Posts the submitted data.
+}
+</script>
+
+<body>
+
+<h1>Test POST and SESSION variables</h1>
+
+<form id="testForm" method="post">
+
+<h3>Selection Criteria:</h3>
+<table>
+<tr>
+  <td>Company: </td>
+  <td><input type="text" class="select" id="company" name="column[company]" value="" /></td>
+</tr>
+<tr>
+  <td>Last Name: </td>
+  <td>  <input type="text" class="select" id="last_name" name="column[last_name]" value="" /></td>
+</tr>
+<tr>
+  <td>State: </td>
+  <td>  <input type="text" class="select" id="state_abbr" name="column[state_abbr]" value="" /></td>
+</tr>
+<tr>
+  <td>Zip Code: </td>
+  <td>  <input type="text" class="select" id="zip_code" name="column[zip_code]" value="" /></td>
+</tr>
+</table>
+
+<h3>Data to post:</h3>
+<p>The following data should be json format.  It will be used to update target records 
+in the database.  <br/>
+NOTE: The record key MUST be included in the list, or the service will return an error.</p>
+
+<textarea id="json" rows="10" cols="60">
+[{"contact_no":"66919","contact_id":"","company":"Jericho Road Crew","last_name":"Lawrence","first_name":"Ron","city":"Jericho","state_abbr":"VT","zip_code":"05465"},{"contact_no":"67678","contact_id":"","company":"","last_name":"Lawrence","first_name":"Richard","city":"Oakland","state_abbr":"CA","zip_code":"94606"},{"contact_no":"68019","contact_id":"","company":"Publishers' Assistant","last_name":"Lawrence","first_name":"Ron","city":"Jericho","state_abbr":"VT","zip_code":"05465"}]
+</textarea><br/>
+
+<button type="button" onclick="loadXMLDoc('GET')">get</button>
+<button type="button" onclick="loadXMLDoc('POST')">post</button>
+<button type="button" onclick="loadXMLDoc('PUT')">put</button>
+<button type="button" onclick="loadXMLDoc('PATCH')">patch</button>
+<button type="button" onclick="loadXMLDoc('DELETE')">delete</button>
+</form>
+
+
+<div id="demo">
+	<h2>Results should show here.</h2>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?php session_start(); 
+
+	// Return a user-friendly name based on the authorization found in the 
+	// session variable.
+	function friendlyName(){
+		if (empty($_SESSION['auth'])) {return ""; }
+		$nameStr = $_SESSION['auth']['contact_noSearch'];
+		if (empty($nameStr)){return $_SESSION['auth']['user_id'];}
+		
+		$nameArray = explode(", ", $nameStr);
+		return $nameArray[1];
+	}
+
+?>
+<!doctype html>
+<html lang="en">
+<body>
+
+<h1>Test Login</h1>
+
+<p>
+The button below will launch the login page.  Upon a successful login, you 
+should return to this page.
+</p>
+
+<button onclick="branchToLogin()">Launch Login</button>
+
+<?php 
+
+
+
+
+/*
+
+		Here's a sample authorization:
+
+[{"count":"1","page":1,"perPage":10},[{"user_no":"15","user_id":"rlawrence41",
+"contact_no":"38135","contact_noSearch":"LAWRENCE, RON",
+"email":"rlawrence@pubassist.com","phone":"(802) 310-8085","authCode":"1000"}]]
+
+ */
+
+if (!empty($_SESSION['auth'])){
+	$userName = friendlyName();
+	echo "<p>Welcome {$userName}.</p>";
+}
+
+echo '<table cellpadding="10">' ; 
+foreach($_SESSION as $varName => $value) {
+	ob_start();
+	var_dump($value);
+	$varDump = ob_get_clean();
+	echo "<tr><td>\$_SESSION['{$varName}']</td><td>{$varDump}</td></tr>" ; 
+} 
+echo '</table>' ;
+
+?>
+
+<p><a href="/">Back to the Test menu</a></p>
+
+<script>
+function branchToLogin() {
+  location.replace("/login.php")
+}
+</script>
+
+</body>
+</html>

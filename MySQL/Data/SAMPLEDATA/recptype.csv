@@ -1,0 +1,10 @@
+recpt_type,creditcard,entered_by,lupdate
+"Cancel Debt",F,"***",1/1/1999
+"Cash",F,"***",1/1/1999
+"Check",F,"***",1/1/1999
+"Discover",T,"***",1/1/1999
+"Mastercard",T,"***",1/1/1999
+"Money Order",F,"***",1/1/1999
+"Other",F,"***",1/1/1999
+"Visa",T,"***",1/1/1999
+"Account Credit",F,"***",1/1/1999

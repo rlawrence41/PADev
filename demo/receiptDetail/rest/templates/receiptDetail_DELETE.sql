@@ -1,0 +1,1 @@
+CALL deleteReceipt(%key%);

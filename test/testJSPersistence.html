@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var carName = "Volvo";
+var currentPage = 0;
+var sortBy = "contact_no";
+var filterStr = "contact_no > 0";
+
+
+function myFunction() {
+
+	alert("Here I am!");
+    var myText = "";
+    var eol = "<br/>\n";
+    var myText = "I can display " + carName + eol;
+    currentPage++;
+    myText += "The current page is: " + currentPage + eol;
+	myText += "Currently sorting by: " + sortBy + eol;
+    myText += "Current Filter Condition: '" + filterStr + "'" + eol;
+
+  document.getElementById("demo").innerHTML = myText;
+
+}
+</script>
+
+
+<h2>JavaScript Scope</h2>
+
+<p>A GLOBAL variable can be accessed from any script or function.</p>
+<p id="demo"></p>
+<button onclick="myFunction()">Click me!</button>
+
+
+</body>
+</html>

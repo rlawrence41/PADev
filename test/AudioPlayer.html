@@ -1,0 +1,78 @@
+<style>
+.songButton {
+  width: 300px;
+}
+</style>
+
+<div id="audioPlayer1">
+<audio id="myAudio1" style="height:30px;" onload()="setProperties()" controls>
+  <source src="" type="audio/mp3">
+Your browser does not support the audio element.
+</audio>
+<p id="songTitle">Song title goes here.</p>
+
+</div>
+
+<script>
+
+// Audio player and caption initial settings.
+var aud = document.getElementById("myAudio1");
+var sTitle = document.getElementById("songTitle");
+aud.volume = 0.6;
+aud.loop = false;
+sTitle.innerText = "Truth";
+aud.src = "https://drive.google.com/uc?export=open&id=1bQwqfOMqsIWBgzj2a_bqlA2E5sjsva-N";
+
+// List of songs to play.
+var clips = [
+{title:"Truth", id:"1bQwqfOMqsIWBgzj2a_bqlA2E5sjsva-N"},
+{title:"Let the Love Shine", id:"1-ym8R9YalD9EimPcZOTDmon5k941PcSG"},
+{title:"Give Me The Words (V1)", id:"1D2Vd9a3np0QDq4Qk9b-4Irl8UfmzUScQ"},
+{title:"Can You Feel My Prayer?", id:"1OeQCNOGMm-Um2SKZ7n3Q3jqEc_YTgQT7"},
+{title:"Happy Days", id:"15SuGZHPFTBewhYPVB3Ol0vZ9IpStMmAg"},
+{title:"Let The Moon Shine Down", id:"1IZqTx-K0122fMyucVzrE4JrKe22yn7KR"},
+{title:"Bear The Rifle", id:"1L8jL4vL9pCIy1SKJ8uD2axRKGCz5uqmV"},
+{title:"In The Wink Of An Eye", id:"1w9RTQeE-UVZT1v7-iX7UbgqHpInYN70H"},
+{title:"You Will Always Be There", id:"13Rh9wwaOZFf29ees3xjmMei1mxX-PRWQ"},
+{title:"Comfortable Old Shoe", id:"1YfanVUIAXp8ti-JnSSrOCZ9DGMFrN_0d"},
+{title:"The Jericho Road Crew Band (out takes)", id:"1ERDFnet_Db6Ek9Ms6EssjItBDWtuqw7s"},
+{title:"The Jericho Road Crew Band", id:"1KwYqubDiQazIa5yi2gc8PIGk7XA7Ws6L"},
+{title:"Anniversary Poem", id:"1mU5K7Rn88Q3C001DLn4GK0dXUpKoF0nm"},
+{title:"Give Me The Words (V2)", id:"1HvHVQ3EsFbyNDYeg0gfS3rfGOxndxo5W"},
+{title:"Choices Made", id:"1AvEkPiEcfKUp0m5wa6hUWX6f3BmJ2POk"},
+{title:"Christian Heart", id:"1rwhXloxlhdFDZGlcMXnTdajKpmE5SYyv"}
+];
+
+// Build a button for each song in the list.
+var i = 0;
+while (i < clips.length) {
+  makeButton(i);
+  i++;
+}
+
+
+function playClip(i) {
+
+  var URLprefix = "https://drive.google.com/uc?export=open&id="
+  sTitle.innerText = clips[i].title;
+  aud.src = URLprefix + clips[i].id;
+  aud.play();
+}
+
+// Creates a new button for the submitted index to clips[].
+function makeButton(i) {
+
+  var btn = document.createElement("BUTTON");
+  var t = document.createTextNode(clips[i].title);
+  var br = document.createElement("BR");
+  btn.appendChild(t);
+  btn.onclick = function (){playClip(i);};
+  btn.className = "songButton";
+  
+  document.getElementById("audioPlayer1").appendChild(br);
+  document.getElementById("audioPlayer1").appendChild(btn);
+}
+
+</script> 
+
+

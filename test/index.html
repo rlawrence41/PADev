@@ -1,0 +1,126 @@
+<html>
+<body>
+<h1>PubAssist Development Tests</h1>
+
+<ul>
+
+<h2>Configuration</h2>
+<li><a href="testConfig.php">Show the Configuration Properties</a></li>
+<li><a href="testIncludes.php">Show a list of Included files.</a></li>
+
+<h2>New UI Development</h2>
+<li><a href="testPageClass.php">Test Page Class</a></li>
+<li><a href="testMenuClass.php">Test the New Menu</a></li>
+<li><a href="testContextClass.php">Test the application <i>Context</i></a></li>
+<li><a href="testPageNavClass.php">Test Page Navigation Class</a></li>
+<li><a href="testTableClass.php">Test Table Class</a></li>
+<li><a href="testTableControl.php">Test Table Control Class</a></li>
+<li><a href="testFormClass.php">Test Form Class</a></li>
+<li><a href="testFieldGroup.php">Test Field Group Class</a></li>
+<li><a href="testFieldClass.php">Test Field Class</a></li>
+<li><a href="testPseudoCode.php">Pseudo Code</a></li>
+<li><a href="testSearchForm.php">Search Contact Form</a></li>
+<li><a href="testSearchField.php">Test the Search Field Class</a></li>
+<li><a href="testSearchField2.php">Test with Two Search Fields</a></li>
+<li><a href="testLoginForm.php">Test the Login Form</a></li>
+<li><a href="testLogin.html">Test branch to Login</a></li>
+<li><a href="testLoggedIn.php">Test whether a user is logged in</a></li>
+<li><a href="" onclick='logout("/test/")'>Logout</a></li>
+
+<h3>Application sub-components</h3>
+
+<li><a href="/contactTable.php?column[last_name]=lawr">Request a contact Table</a></li>
+<li><a href="/contactSearchList.php?searchVal=pub">Request a contact Search List</a></li>
+<li><a href="/titleTable.php?column[title]=%publ">Request a title Table</a></li>
+<li><a href="/titleSearchList.php?searchVal=publ">Request a title Search List</a></li>
+<li><a href="testWidget.php">Test Pledge Summary as a Widget</a></li>
+<li><a href="testContactCSVexport.php">Download Contacts to CSV</a></li>
+
+<h3>Application Widgets</h3>
+
+<li><a href="testPledgeSummary.php">Pledge Application Widget</a></li>
+
+<h2>REST API</h2>
+<li><a href="/demo/contact/rest/contact.php/contact/1">Call REST API using a key value</a></li>
+<li><a href="/demo/contact/rest/contact.php/contact?column[state_abbr]=NY&sortBy=last_name">REST API GET Contacts with selection criteria</a></li>
+<li><a href="/demo/contact/rest/contact.php/contact?sortBy=state_abbr,last_name">Test REST API with Sort order</a></li>
+<li><a href="/demo/contact/rest/contact.php/contact?limit=20&column[state_abbr]=NY">Test REST API with limit</a></li>
+<li><a href="/demo/contact/rest/contact.php/contact?compare=relaxed&column[last_name]=Law">Test REST API with relaxed comparisons</a></li>
+<li><a href="/demo/contact/rest/contact.php/contact?compare=relaxed&sortBy=first_name&limit=10&searchVal=SMI">REST API with relaxed, sort, and limit</a></li>
+<li><a href="/demo/contact/rest/title.php/title?compare=relaxed&column[title]=%tax&sortBy=titleNoPre,title">REST API GET Titles with relaxed search and sort</a></li>
+<li><a href="/demo/contact/rest/user.php/user?column[user_id]=rlawrence41">Get a User</a></li>
+<li><a href="/demo/contact/rest/auth.php/auth?column[user_id]=rlawrence41&column[password]=harmonylaw41">Authorize a User</a></li>
+<li><a href="testRESTform6.html">Test REST API with multiple methods</a></li>
+
+
+<h3>Call REST From the Server</h3>
+<li><a href="testCurl2REST.php">Test Curl to REST API</a></li>
+
+<h2>WordPress REST API Calls</h2>
+<h3>...without "pretty permalinks" enabled</h3>
+<li><a href="https://vm.pubassist.com/wordpress/?rest_route=/wp/v2/posts">GET a list of posts</a></li>
+<li><a href="https://vm.pubassist.com/wordpress/?rest_route=/wp/v2/users">GET a list of users</a></li>
+
+<h2>WordPress LIVE REST API Calls</h2>
+<li><a href="https://pubassist.com?rest_route=/wp/v2/posts">GET a list of posts</a></li>
+<li><a href="https://pubassist.com?rest_route=/wp/v2/users">GET a list of users</a></li>
+
+<h2>Javascript</h2>
+<li><a href="testJSPersistence.html">Test variable persistence in Javascript</a></li>
+<li><a href="testJSredirect.html">Test Javascript Redirect</a></li>
+
+
+<h2>JSON</h2>
+<li><a href="testJSON2Str.html">Convert JSON object to strings using Javascript</a></li>
+<li><a href="testJSON2Str.php">Convert JSON object to strings using PHP</a></li>
+
+
+<h2>HTML Tests</h2>
+<li><a href="testHover.html">Test the Search List Styling</a></li>
+
+
+<h2>ODBC Tests</h2>
+<li><a href="testODBC.php">Basic ODBC connection</a></li>
+<li><a href="testODBC1.php">Attempt ODBC connection with cursor types</a></li>
+<li><a href="testODBC2.php">Connect to an ODBC DSN using PDO</a></li>
+<li><a href="testODBC3.php">Probe the structure of the result set</a></li>
+<li><a href="testODBC4.php">Fetch a specific page of records</a></li>
+<li><a href="testODBC5.php">Test various ODBC record fetching functions</a></li>
+
+
+<h2>General PHP Tests</h2>
+<li><a href="test.php">Test PHP</a></li>
+<li><a href="testIncludes.php">Test Includes</a></li>
+<li><a href="testGlobals.php">Test PHP $GLOBALS</a></li>
+<li><a href="testQueryString.php?resource=contact&keyField=contact_no&page=25&sortby=last_name&column[state_abbr]=VT&column[last_name]=Lawrence">Test query string</a></li>
+<li><a href="testCurl2.php">Test Curl</a></li>
+<li><a href="testException.php">Test Exception</a></li>
+<li><a href="testMagicConstants.php">Test Magic Constants</a></li>
+<li><a href="testPHP-execute.php">Test PHP Execute</a></li>
+<li><a href="testPHP_SERVER.php">PHP $_SERVER Variables</a></li>
+<li><a href="testSession1.php">PHP $_SESSION Variable</a></li>
+<li><a href="testPasswordHash.php">Test Password Hash/Verify</a></li>
+
+<h2>Other Services Tests</h2>
+<li><a href="testEmail.php">Test Email</a></li>
+<li><a href="testHTMLemail.php">Test HTML Email</a></li>
+<li><a href="testHTMLemail.html">Test HTML Email - PHP in .html doc</a></li>
+<li><a href="testOpenStreetMapGeocodeService.php">Test Open Street Map Geocode</a></li>
+<li><a href="testOpenRouteSourceDrivingDistance.php">Test Open Route Source Driving Distance (Not yet ready.)</a></li>
+<li><a href="testOpenRouteSourceGetAPIKey.php">Test Open Route Source Get API Key (Not yet ready.)</a></li>
+
+</ul>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- Optional JavaScript -->
+<script src="/common/ui/js/pageNav.js"></script>
+<script src="/common/ui/js/searchList.js"></script>
+<script src="/common/ui/js/pageActions.js"></script>
+<script src="/common/ui/js/auth.js"></script>
+
+</body>
+</html>

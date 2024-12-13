@@ -1,0 +1,6 @@
+spec_no,title_id,order_qty,cost,discount,net,rate,when_ordrd,entered_by,lupdate
+2,"DEMO 1",5000,2.25,0.00,F,0.00,F,"STC",10/9/1999
+3,"DEMO 2",0,0.00,0.00,F,50.00,F,"STC",10/9/1999
+4,"DEMO 2",0,0.00,30.00,F,45.00,F,"STC",10/9/1999
+5,"FALL ISSUE",0,0.40,0.00,F,0.00,F,"STC",10/9/1999
+6,"DIRECTORY",0,8.00,0.00,F,0.00,F,"STC",10/9/1999

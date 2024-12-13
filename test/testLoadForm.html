@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Load Form</h2>
+
+<p>The for/in statement loops through the properties of an object.</p>
+
+<p id="demo"></p>
+
+<form id="adminForm">
+<label>Contact No.</label><input id="contact_no" type="text" disabled /><br/>
+<label>Company</label><input id="company" type="text" /><br/>
+<label>First Name</label><input id="first_name" type="text" /><br/>
+<label>Last Name</label><input id="last_name" type="text" /><br/>
+<label>Street</label><textarea id="po_addr"></textarea><br/>
+<label>City</label><input id="city" type="text" /><br/>
+<label>State</label><input id="state_abbr" type="text" /><br/>
+<label>Zip Code</label><input id="zip_code" type="text" /><br/>
+</form>
+
+
+
+
+<script>
+var txt = "";
+var responseText = [{"contact_no":"66892",
+"company":"WESTERN REFLECTIONS, INC.",
+"first_name":"JAN",
+"last_name":"SMITH",
+"po_addr":"636 MAIN STREET, PO BOX 710",
+"city":"OURAY",
+"state_abbr":"CO",
+"zip_code":"81427"}]
+var fieldName, jsonData;
+
+	//jsonData = json.parse(responseText);
+	jsonData = responseText[0];
+
+	// Loop through the fields of the json record to update field values in the 
+	// administrative form.
+	var fieldName, formElement, txt;
+	for (fieldName in jsonData) {
+	  fieldVal = jsonData[fieldName];
+
+	  txt += fieldName + ":  " +jsonData[fieldName] + "<br/>\n";
+
+	  
+	  // Is there an element associated with the fieldName?
+	  formElement = document.getElementById(fieldName);
+	  if (formElement!=null){ formElement.value = fieldVal; }
+//	  else {alert("No form element was found for " + fieldName);}
+	}
+
+/*
+for (fieldName in jsonData) {
+  txt += fieldName + ":  " +jsonData[fieldName] + "<br\>\n";
+  document.getElementById(fieldName).value = jsonData[fieldName];
+}
+ */
+document.getElementById("demo").innerHTML = txt;
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

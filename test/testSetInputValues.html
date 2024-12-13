@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- FavIcon for this site -->
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+	
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>JavaScript Load Form with different inputs</title>
+  </head>
+  <body>
+    <h1>JavaScript Load Form with different inputs</h1>
+
+	<p>This test is to verify the technique needed to assign a value to different types of input elements.</p>
+
+	<p id="demo"></p>
+
+
+	<form method="post" id="adminForm">
+		
+		<!-- Text field -->
+		<div class='form-group'>
+			<label for='company'>Company</label>
+			<input type='text' 
+				class='form-control' 
+				id='company' 
+				name="column[company]" 
+				value=""
+				placeholder='Company or organization name'/>
+		</div>
+
+		<!-- Text field -->
+		<div class='form-group'>
+			<label for='first_name'>First Name</label>
+			<input type='text' 
+				class='form-control' 
+				id='first_name' 
+				name="column[first_name]" 
+				value=""
+				placeholder='first name'/>
+		</div>
+
+		<!-- Text field -->
+		<div class='form-group'>
+			<label for='last_name'>Last Name</label>
+			<input type='text' 
+				class='form-control' 
+				id='last_name' 
+				name="column[last_name]" 
+				value=""
+				placeholder='last name'/>
+		</div>
+
+		<!-- Textarea field -->
+		<div class='form-group'>
+			<label for='po_addr'>Street</label>
+			<textarea class='form-control' 
+				id='po_addr' 
+				placeholder='{fieldDescription}'></textarea>
+		</div>
+
+		<!-- Boolean field -->
+		<div class='form-check'>
+			<input class='form-check-input' type='checkbox' id='author'/>
+			<label class='form-check-label' for='author'>Author?</label>
+		</div>
+
+		<!-- Date field -->
+		<div class='form-group'>
+			<label for='lupdate'>Last Updated</label>
+			<input type='date' 
+				class='form-control' 
+				id='lupdate' 
+				placeholder='mm/dd/yyyy'/>
+		</div>
+
+
+	</form>
+
+	<!-- Font Awesome for icons -->
+	<script src="https://kit.fontawesome.com/fde02d87f1.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Optional JavaScript -->
+	<script src="/ui/js/pageActions.js"></script>
+
+	<script>
+	
+	/*
+	 *	The following variables retain the context for the page.
+	 */
+		var resource 	= "{resource}";
+		var pageNo		= {pageNo};
+		var lastPage	= 0;
+		var sortBy 		= "" ;
+		var filterStr 	= "" ;
+		var restURI 	= "{localRESTURI}" ;
+	</script>
+	<script>
+	var txt = "";
+
+/*	
+	// Simulate an AJAX response...
+	var responseText = '[{"contact_no":"66892",	"company":"WESTERN REFLECTIONS, INC.","first_name":"JAN","last_name":"SMITH","po_addr":"636 MAIN STREET, PO BOX 710","city":"OURAY","state_abbr":"CO","zip_code":"81427","author":true,"lupdate":"2018-03-14"}]'
+
+	loadFormFromJSON(responseText);
+*/
+
+	 
+	var responseText = [{"contact_no":"66892",	
+		"company":"WESTERN REFLECTIONS, INC.",
+		"first_name":"JAN",
+		"last_name":"SMITH",
+		"po_addr":"636 MAIN STREET, PO BOX 710",
+		"city":"OURAY",
+		"state_abbr":"CO",
+		"zip_code":"81427",
+		"author":true,
+		"lupdate":"2018-03-14"}]
+
+	var fieldName, jsonData;
+
+		//jsonData = json.parse(responseText);
+		jsonData = responseText[0];
+
+		// Loop through the fields of the json record to update field values in the 
+		// administrative form.
+		var fieldName, formElement, txt="";
+		for (fieldName in jsonData) {
+		  fieldVal = jsonData[fieldName];
+
+		  
+		  // Is there an element associated with the fieldName?
+		  formElement = document.getElementById(fieldName);
+		  if (formElement!=null) { txt += assignValue(formElement, fieldVal); }
+	//	  else {alert("No form element was found for " + fieldName);}
+		}
+	document.getElementById("demo").innerHTML = txt;
+	
+
+
+ 	function assignValue(formElement, fieldVal) {
+
+		var id = formElement.getAttribute('id');
+		var type = formElement.type;
+		var eol = "<br/>\n";
+		var txt = id + " = " + fieldVal + ", Type: " + type + eol;
+	//	alert(txt);
+		switch(type) {
+			case "checkbox":
+				formElement.checked = fieldVal;
+				break;
+			case "date":
+				formElement.value = formatDate(fieldVal);
+				break;
+			default:
+			formElement.value = fieldVal
+		}
+		
+		return txt;
+	}
+
+	// From: https://stackoverflow.com/questions/23593052/format-javascript-date-to-yyyy-mm-dd
+	function formatDate(date) {
+		// Convert to standard date format.
+		var d = new Date(date),
+			month = '' + (d.getMonth() + 1),
+			day = '' + d.getDate(),
+			year = d.getFullYear();
+
+		if (month.length < 2) month = '0' + month;
+		if (day.length < 2) day = '0' + day;
+
+		return [year, month, day].join('-');
+	}
+
+
+	</script>
+
+  </body>
+</html>

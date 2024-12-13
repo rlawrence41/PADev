@@ -1,0 +1,24 @@
+item_no,order_key,title_id,title,inventory,consignmnt,condition,quantity,order_date,price,discount,deduction,shipweight,item_state,subscript,expiredate,comment,entered_by,lupdate
+1,0,"DEMO 2","DEMONSTRATION TITLE, CONSIGNMENT",T,T," ",2000.00,10/9/2021,19.95,0.00,0.00,0.00,"A",F,/  /,"","STC",2/18/2022
+2,0,"DEMO 1","FIRST DEMONSTRATION TITLE",T,F," ",10000.00,10/9/2021,24.95,0.00,0.00,0.00,"A",F,/  /,"","STC",2/18/2022
+3,1,"DEMO 1","FIRST DEMONSTRATION TITLE",T,F," ",1.00,10/9/2021,24.95,0.00,0.00,1.75,"S",F,/  /,"","STC",2/18/2022
+4,1,"DEMO 2","DEMONSTRATION TITLE, CONSIGNMENT",T,T," ",2.00,10/9/2021,19.95,0.00,0.00,1.50,"S",F,/  /,"","STC",2/18/2022
+6,0,"FALL ISSUE","FALL ISSUE OF DEMO-LIFE MAGAZINE",T,F," ",1000.00,10/9/2021,5.00,0.00,0.00,0.00,"A",F,/  /,"STOCKED FOR SUBSCRIPTIONS","STC",2/18/2022
+7,2,"SUBDEMO","TEST SUBSCRIPTION ID",F,F," ",1.00,10/9/2021,15.00,0.00,0.00,0.00,"S",T,10/31/2021,"","STC",2/18/2022
+8,3,"SOTEST","TEST STANDING-ORDER ITEM ID",F,F," ",1.00,10/9/2021,0.00,0.00,0.00,0.00,"S",T,10/31/2021,"","STC",2/18/2022
+11,0,"DIRECTORY","CURRENT ISSUE OF THE ANNUAL DIRECTORY",T,F," ",500.00,10/9/2021,49.95,0.00,0.00,0.00,"A",F,/  /,"","STC",2/18/2022
+13,7,"DIRECTORY","CURRENT ISSUE OF THE ANNUAL DIRECTORY",T,F," ",1.00,10/9/2021,49.95,0.00,0.00,2.00,"S",F,/  /,"","STC",2/18/2022
+14,8,"DEMO 1","FIRST DEMONSTRATION TITLE",T,F," ",500.00,10/9/2021,24.95,0.00,0.00,1.75,"S",F,/  /,"","STC",2/18/2022
+15,9,"DEMO 2","DEMONSTRATION TITLE, CONSIGNMENT",T,T," ",1.00,10/9/2021,19.95,0.00,0.00,1.50,"S",F,/  /,"","STC",2/18/2022
+17,0,"DEMO 2","DEMONSTRATION TITLE, CONSIGNMENT",T,T," ",-200.00,3/29/2021,19.95,0.00,0.00,0.00,"A",F,/  /,"Testing inventory corrections.","RWL",2/18/2022
+20,12,"DEMO 1","FIRST DEMONSTRATION TITLE",T,F," ",1000.00,3/30/2021,3.50,0.00,0.00,0.00,"P",F,/  /,"","RWL",2/18/2022
+21,0,"DEMO 2","DEMONSTRATION TITLE, CONSIGNMENT",T,T," ",-1000.00,4/3/2021,19.95,0.00,0.00,0.00,"A",F,/  /,"Moving copies to our warehouse in Williston.","RWL",2/18/2022
+23,0,"DEMO 2","DEMONSTRATION TITLE, CONSIGNMENT",T,T," ",1000.00,4/3/2021,19.95,0.00,0.00,0.00,"A",F,/  /,"Copies moved from main office.","RWL",2/18/2022
+31,0,"NEWTITLE","This is a very long title for the purposes of testing long titles in the order items screen.  This title has a weight of 1.1 pounds to test whether weights are being truncated as well.",T,F," ",100.00,4/9/2021,20.00,0.00,0.00,0.00,"A",F,/  /,"","RWL",2/18/2022
+37,0,"VERYLONGTITLEID","This is a long title for a title with a VERYLONGTITLEID to test whether the long TITLE ID is carried through to the invoice.",T,F," ",100.00,4/9/2021,10.00,0.00,0.00,0.00,"A",F,/  /,"This is a test inventory correction.","RWL",2/18/2022
+19,11,"DEMO 2","DEMONSTRATION TITLE, CONSIGNMENT",T,T," ",200.00,3/29/2021,19.95,0.00,0.00,1.50,"S",F,/  /,"","RWL",2/18/2022
+16,10,"DEMO 1","FIRST DEMONSTRATION TITLE",T,F," ",150.00,11/29/2021,24.95,0.00,0.00,1.75,"R",F,/  /,"","RWL",2/18/2022
+38,15,"DEMO 1","FIRST DEMONSTRATION TITLE",T,F," ",1.00,3/9/2022,24.95,0.00,0.00,1.75,"S",F,/  /,"","RWL",3/9/2022
+39,14,"NEWTITLE","This is a very long title for the purposes of testing long titles in the order items screen.",T,F," ",2.00,4/9/2021,20.00,0.00,0.00,1.10,"B",F,/  /,"","RWL",12/12/2023
+40,14,"NEWTITLE","This is a very long title for the purposes of testing long titles in the order items screen.",T,F," ",1.00,4/9/2021,20.00,0.00,0.00,1.10,"B",F,/  /,"","RWL",12/12/2023
+41,14,"VERYLONGTITLEID","This is a long title for a title with a VERYLONGTITLEID to test whether the long TITLE ID is carried through to the invoice.",T,F," ",2.00,4/9/2021,10.00,0.00,0.00,0.60,"C",F,/  /,"","RWL",12/12/2023

@@ -1,0 +1,45 @@
+</div>
+<!-- Group Detail End -->
+
+<!-- Group Summary Start -->
+
+<div id="rptSummary">
+<table class="no-inner-borders">
+
+{content}
+
+<tr>
+	<td width="50%">&nbsp;</td>
+	<td width="40%"><strong>Surcharges:</strong></td>
+	<td><span id=surchargesId>{surcharges}</span></td>
+</tr>
+<tr>
+	<td width="50%">&nbsp;</td>
+	<td width="40%"><strong>Applied to Surcharges:</strong></td>
+	<td width="10%"><span id=surchargesId>{srchgPaid}</span></td>
+</tr>
+
+
+</table>
+
+
+<table style="min-height: 75px;">
+<tr>
+	<th width="100%" colspan="4" height="20px"><strong>Comments:</strong></th>
+</tr>
+<tr height="70px">
+	<td width="100%" colspan="4" >{comment}</td>
+</tr>
+</table>
+</div>
+
+<!-- Report processing options -->
+<div class="noPrint"; style="text-align: center;">
+  <div style="display: inline-block;">
+	<button class="aniButton" onClick="postProcessReceipt({id})">Process</button>
+	<button class="aniButton" onClick="alert('You pressed ' + this.innerText + '!')">Cancel</button>
+	<button class="aniButton" onClick="window.print()");>Print</button>
+  </div>
+</div>
+
+<!-- Group Summary End -->

@@ -1,0 +1,17 @@
+"txName","stepName","txDescription","txView","resource","keyFieldName","secondaryKey","parentId","parentKeyField","addAction","exitAction","selectAction","summaryBandTemplate"
+"Customer Order","Customer Order","Select or enter a customer order.","customerOrder","orders","id",,1,"id",,,,
+"Customer Order","Ship To","Select or enter the ship to contact for this customer order.","customerOrder","contact","id",,1,"shipToNo",,,"updateShipTo({keyValue})",
+"Customer Order","Bill To","Select or enter the billing contact for this customer order.","customerOrder","contact","id",,1,"customerNo",,,"updateBillTo({keyValue})",
+"Customer Order","Order Items","Enter or edit the detail items for this customer order.","customerOrder","orderItem","id",,1,"orderKey","addItem({keyValue})","updateCustomerOrder({keyValue})",,
+"Customer Order","Supplier","Select or enter the warehouse contact to ship this customer order from.","customerOrder","contact","id",,1,"supplierNo",,,"updateSupplier({keyValue})",
+"Customer Order","Sales Rep","Select or enter the sales representative for this customer.","customerOrder","contact","id",,1,"salesRepNo",,,"updateSalesRep({keyValue})",
+"Customer Return","Customer Return","Select or enter a customer order.","customerReturn","orders","id",,8,"id",,,,
+"Customer Return","Ship To","Select or enter the ship to contact for this customer order.","customerOrder","contact","id",,8,"shipToNo",,,"updateShipTo({keyValue})",
+"Customer Return","Bill To","Select or enter the billing contact for this customer order.","customerOrder","contact","id",,8,"customerNo",,,"updateBillTo({keyValue})",
+"Customer Return","Order Items","Enter or edit the detail items for this customer order.","customerOrder","orderItem","id",,8,"orderKey","addItem({keyValue})","updateCustomerReturn({keyValue})",,
+"Customer Return","Supplier","Select or enter the warehouse contact to ship this customer order from.","customerOrder","contact","id",,8,"supplierNo",,,"updateSupplier({keyValue})",
+"Customer Return","Sales Rep","Select or enter the sales representative for this customer.","customerOrder","contact","id",,8,"salesRepNo",,,"updateSalesRep({keyValue})",
+"Receipt","Receipt","Select or enter a receipt from a customer.","receiptDetail","receipt","id",,14,"id",,,,
+"Receipt","Customer ","Select or enter the customer (billing) contact for this receipt.","receiptDetail","contact","id",,14,"customerNo",,"updateCustomer({keyValue})",,
+"Receipt","Apply to Orders","Apply receipt to orders and returns.","receiptDetail","appliedOrder","customerNo","receiptNo",14,"receiptNo",,"postItemReceipts({keyValue})",,"appliedOrder.html"
+"Receipt","Apply to Items","Apply receipt to items.","receiptDetail","appliedItem","customerNo","receiptNo",14,"receiptNo",,"postOrderReceipts({keyValue})",,"appliedItem.html"

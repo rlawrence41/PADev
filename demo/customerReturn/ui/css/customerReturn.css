@@ -1,0 +1,24 @@
+/* Remove all borders for tables with the class 'no-border' */
+.no-borders, .no-borders td, .no-borders th {
+	border: none !important;
+}
+
+/* Remove borders from tables with the class 'no-inner-borders' */
+.no-inner-borders td, .no-inner-borders th {
+  border: none;
+}
+
+/* Add borders for detail table columns */
+.detail-table td, .detail-table th {
+  border: 1px solid #000; /* Adjust the border color and style as needed */
+}
+
+/* Optionally, to ensure the detail table borders are more prominent */
+.detail-table {
+  border-collapse: collapse; /* Ensures borders don't double up */
+}
+
+.detail-table td, .detail-table th {
+  padding: 8px; /* Adjust padding as needed */
+}
+

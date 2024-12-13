@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liberty Checks Template</title>
+    <style>
+        @page {
+            margin: 0; /* Suppresses browser headers/footers */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px; /* Default font size */
+            margin: 0;
+            padding: 0;
+        }
+
+        .page {
+            width: 8.5in;
+            height: 8.5in; /* Adjust for 3 checks per page */
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .check {
+            width: 6in;
+            height: 2.8125in; /* Each check's height */
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .left-panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2.5in; /* Matches left panel width */
+            height: 100%;
+            padding: 0.25in;
+            box-sizing: border-box;
+        }
+
+        .right-panel {
+            position: absolute;
+            top: 0;
+            left: 2.5in;
+            width: 6in; /* Remaining width */
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Larger font for check details */
+        .details {
+            font-size: 16px; /* Larger font size for details */
+        }
+
+        /* Token Positions Matching Pre-Printed Elements */
+        .date {
+            position: absolute;
+            top: 0.875in; /* Align with pre-printed date */
+            right: 0.5in;
+        }
+
+        .payee {
+            position: absolute;
+            top: 1.125in; /* Align with "Pay to the order of" */
+            left: 3.125in;
+        }
+
+        .amount {
+            position: absolute;
+            top: 1.125in; /* Align with "$" and numeric amount */
+            right: 0.5in;
+            text-align: right;
+        }
+
+        .amount-words {
+            position: absolute;
+            top: 1.5in; /* Align with "DOLLARS" */
+            left: 3.125in;
+            width: calc(8.5in - 3.5in);
+        }
+
+        .memo {
+            position: absolute;
+            top: 2.375in; /* Align with "Memo" */
+            left: 3.125in;
+        }
+
+        /* Left panel label positions */
+        .left-labels {
+            position: absolute;
+            left: 0.625in;
+        }
+
+        .left-labels .date-label {
+            top: 0.75in;
+        }
+
+        .left-labels .pay-to-label {
+            top: 1.0625in;
+        }
+
+        .left-labels .amount-label {
+            top: 1.5625in;
+        }
+
+        .left-labels .memo-label {
+            top: 1.875in;
+        }
+
+        .left-labels .acct-label {
+            top: 2.25in;
+        }
+
+        .left-labels .memo-final-label {
+            top: 2.5625in;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Check 1 -->
+        <div class="check">
+            <div class="left-panel">
+                <div class="left-labels">
+                    <div class="date-label">Date</div>
+                    <div class="pay-to-label">Pay To</div>
+                    <div class="amount-label">Amount $</div>
+                    <div class="memo-label">Memo</div>
+                    <div class="acct-label">Acct.</div>
+                    <div class="memo-final-label">Memo</div>
+                </div>
+            </div>
+            <div class="right-panel">
+                <div class="date">{date}</div>
+                <div class="payee">{payee}</div>
+                <div class="amount">${amount}</div>
+                <div class="amount-words">{amount_words}</div>
+                <div class="memo">{memo}</div>
+            </div>
+        </div>
+
+        <!-- Check 2 -->
+        <div class="check">
+            <div class="left-panel">
+                <div class="left-labels">
+                    <div class="date-label">Date</div>
+                    <div class="pay-to-label">Pay To</div>
+                    <div class="amount-label">Amount $</div>
+                    <div class="memo-label">Memo</div>
+                    <div class="acct-label">Acct.</div>
+                    <div class="memo-final-label">Memo</div>
+                </div>
+            </div>
+            <div class="right-panel">
+                <div class="date">{date}</div>
+                <div class="payee">{payee}</div>
+                <div class="amount">${amount}</div>
+                <div class="amount-words">{amount_words}</div>
+                <div class="memo">{memo}</div>
+            </div>
+        </div>
+
+        <!-- Check 3 -->
+        <div class="check">
+            <div class="left-panel">
+                <div class="left-labels">
+                    <div class="date-label">Date</div>
+                    <div class="pay-to-label">Pay To</div>
+                    <div class="amount-label">Amount $</div>
+                    <div class="memo-label">Memo</div>
+                    <div class="acct-label">Acct.</div>
+                    <div class="memo-final-label">Memo</div>
+                </div>
+            </div>
+            <div class="right-panel">
+                <div class="date">{date}</div>
+                <div class="payee">{payee}</div>
+                <div class="amount">${amount}</div>
+                <div class="amount-words">{amount_words}</div>
+                <div class="memo">{memo}</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

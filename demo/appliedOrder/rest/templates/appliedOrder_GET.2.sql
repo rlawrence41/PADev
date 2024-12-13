@@ -1,0 +1,1 @@
+select id, applied, orderKey, orderStr, orderType, orderDate, receiptNo, customerNo, customerIdSearch, orderTotal, orderPaid, orderBalance, surcharges, srchgPaid, srchgBalance from %resource% %where% %orderBy% %limit% ;

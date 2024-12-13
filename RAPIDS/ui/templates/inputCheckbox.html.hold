@@ -1,0 +1,8 @@
+		<div class='form-check' title="{description}">
+			<input class='form-check-input {classList}' 
+				type='checkbox'
+				name='column[{name}]'				
+				id='{htmlId}' 
+				value='{value}' />
+			<label class='form-check-label' for='{htmlId}'>{title}</label>
+		</div>

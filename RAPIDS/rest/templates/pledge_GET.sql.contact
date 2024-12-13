@@ -1,0 +1,11 @@
+select 	pledge.pledge_no, 
+		pledge.id, 
+		pledge.project_no, 
+		pledge.amount, 
+		pledge.comment,
+		concat(contact.last_name, ", ", contact.first_name, ", ", contact.company) as contact_noSearch, 
+		project.projectname as project_noSearch 
+  from pledge 
+	join contact ON contact.id = pledge.contact_no
+	join project ON project.project_no = pledge.project_no
+  %where% %orderBy% %limit% ;

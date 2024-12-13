@@ -1,0 +1,26 @@
+
+<!-- Standard Form -->
+<div class="standard-form-div">
+  <div class="standard-body">
+	<form class="standard-form" id="{htmlId}">
+	  <fieldset>
+		<legend id="formDescription">{description}</legend>
+
+{content}
+
+	  </fieldset>
+	</form>
+  </div>
+  <div class="standard-footer">
+	<button type="button" 
+		id="continue"
+		class="btn btn-primary"
+		{action}>Continue
+	</button>
+	<button type="button" 
+		id="cancel" 
+		class="btn btn-secondary" 
+		onclick="logout()">Close
+	</button>
+  </div>
+</div>

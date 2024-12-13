@@ -1,0 +1,2 @@
+CALL getItemsToPay(%parameterList%);
+

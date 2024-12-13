@@ -1,0 +1,7 @@
+customerno,crcrd_vndr,crcrd_acct,crcrdexpdt,salesrepno,tax_exempt,discount,terms,terms_desc,cred_limit,entered_by,lupdate
+4,"Mastercard","5555-1111-1111-1111",2/28/2021,0,F,10.00,"Prepaid","",0.00,"STC",2/18/2022
+3,"","",/  /,5,F,0.00,"","",0.00,"STC",2/18/2022
+6,"Discover","6011-6011-6011-6011",12/31/2021,0,F,0.00,"Prepaid","",0.00,"",2/18/2022
+7,"","",/  /,0,T,0.00,"Prepaid","",0.00,"STC",2/18/2022
+11,"","",/  /,0,T,55.00,"Net 30 days","",0.00,"STC",2/18/2022
+12,"American Express","3333-333333-33333",12/31/2021,5,F,0.00,"","",0.00,"STC",2/18/2022

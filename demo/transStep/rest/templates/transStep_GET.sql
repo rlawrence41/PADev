@@ -1,0 +1,1 @@
+select id, txName, stepName, txDescription, txView, resource, keyFieldName, secondaryKey, parentId, parentKeyField, addAction, exitAction, selectAction, summaryBandTemplate, updatedBy, userNo, lastUpdated from %resource% %where% %orderBy% %limit% ;

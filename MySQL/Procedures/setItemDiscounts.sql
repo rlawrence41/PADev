@@ -1,0 +1,2 @@
+ UPDATE orderItem oi JOIN orders o ON o.id = oi.orderKey  SET oi.discount = o.discount  WHERE oi.discount = 0 AND oi.orderKey > 0;
+ UPDATE orderItem SET deduction = ROUND(FLOOR(price * discount)/100, 2) WHERE discount > 0;

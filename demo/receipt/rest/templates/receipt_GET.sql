@@ -1,0 +1,26 @@
+select receipt.id, 
+	receipt.customerNo, 
+	receipt.customerNo, 
+	concat_ws(", ", cust.lastName, cust.firstName, cust.company) as customerNoSearch,
+	receipt.recptDate, 
+	receipt.orderKey, 
+	concat_ws("-",convert(ordr.orderNo,char(10)), convert(ordr.invoiceNo, char(2))) AS invoiceStr,
+	receipt.amount, 
+	receipt.lFullPaymnt, 
+	receipt.recptType, 
+	receipt.crcrdAcct, 
+	receipt.crcrdExpDt, 
+	receipt.crcrdVCode, 
+	receipt.crcrdAuth, 
+	receipt.transactId, 
+	receipt.lItemized, 
+	receipt.lRefund, 
+	receipt.lProcessed, 
+	receipt.lExported, 
+	receipt.comment, 
+	receipt.updatedBy, 
+	receipt.userNo, 
+	receipt.lastUpdated 
+from receipt join contact cust ON cust.id = receipt.customerNo 
+left join orders ordr ON ordr.id = receipt.orderKey 
+%where% %orderBy% %limit% ;

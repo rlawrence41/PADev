@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+<p>After a function has been stored in a variable,
+the variable can be used as a function:</p>
+
+<p id="demo"></p>
+
+<script>
+
+var functionName = "updateBillTo" ;
+
+
+// Make sure we can call the function directly.
+updateBillTo(7);
+
+// Now let's see if I can refer to the function via the window object.
+if (functionExists(functionName)) {
+	var keyValue = 8 ;
+	const myfunction = window[functionName](keyValue);
+    myFunction(keyValue);
+}
+else alert("Function " + functionName + " doesn't exist!");
+
+
+// Checks for the existence of the submitted function.
+function functionExists(func){
+
+	funcRef = window[func];	// Note the reference to the window object.
+	return (typeof funcRef == 'function')
+}
+
+
+function updateBillTo(keyValue) {
+
+	var message = "Updating customerNo in orders with " + keyValue ;
+	document.getElementById("demo").innerHTML = message;
+}
+</script>
+
+</body>
+</html>
+
+

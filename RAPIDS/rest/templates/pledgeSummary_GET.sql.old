@@ -1,0 +1,5 @@
+select 	project.*, 
+		sum(pledge.amount) AS amount,
+		sum(pledge.amount)/project.estimated_cost*100 AS percent
+  from project left join pledge on pledge.project_no = project.project_no
+  %where% %orderBy% %limit% ;

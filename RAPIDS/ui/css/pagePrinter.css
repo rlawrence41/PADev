@@ -1,0 +1,42 @@
+/* The following dictates the appearance of reports. */
+
+.groupHeader {
+	page-break-before: always; 
+	background-color:light gray;
+}
+
+.titlePage {
+	height: 100vh;
+	width: 8.5in;
+	margin: 1in;
+}
+
+
+.rptTitle {		/* Center the report title */
+	margin-left: auto;
+	margin-right: auto;
+    text-align: center;
+}
+
+h1.rptTitle {
+  font-size: 2.5em; /* 40px/16=2.5em */
+}
+
+h2.rptTitle {
+  font-size: 1.8em; /* 30px/16=1.875em */
+}
+
+.verticalCenter {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@media print
+{    
+    .noPrint, .noPrint *
+    {
+        display: none !important;
+    }
+}

@@ -1,0 +1,98 @@
+<!-- Form Division -->
+<div class="container-fluid" id="form">
+		
+<!-- Modal -->
+<div class="modal fade" id="adminFormDiv" tabindex="-1" role="dialog" aria-labelledby="adminFormLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="adminFormLabel">Sign In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+		<form class="bd-example" id="adminForm">
+		  <fieldset>
+			<legend id="formDescription"></legend>
+
+			<div class="accordion" id="Credentials">
+			  <div class="card">
+				<div class="card-header" id="headingOne">
+				  <h2 class="mb-0">
+					<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#CredentialsCollapse" aria-expanded="true" aria-controls="CredentialsCollapse">
+					  Credentials
+					</button>
+				  </h2>
+				</div>
+
+				<div id="CredentialsCollapse" class="collapse show" aria-labelledby="headingOne" data-parent="#Credentials">
+				  <div class="card-body">
+
+					<div class='form-group'>
+						<input type='hidden' 
+							class='form-control data-set' 
+							name='column[contact_no]'
+							id='contact_no'/>
+					</div>
+
+					<div class='form-group'>
+						<label for='contact_id'>User Id</label>
+						<input type='text' 
+							class='form-control data-set' 
+							id='contact_id' 
+							name="column[contact_id]" 
+							value=""
+							placeholder='Short, memorable name for the account'
+							autocomplete="off" />
+					</div>
+
+					<div class='form-group'>
+						<label for='email'>Email</label>
+						<input type='email' 
+							class='form-control data-set'
+							name="column[email]" 				
+							id='email' 
+							placeholder='username@domain.com'/>
+					</div>
+
+					<div class='form-group'>
+						<label for='password'>password</label>
+						<input type='password' 
+							class='form-control data-set' 
+							name="column[password]" 				
+							id='password' 
+							placeholder='Enter your password.'/>
+					</div>
+
+
+				  </div>
+				</div>
+			  </div>
+			</div>
+
+
+		  </fieldset>
+		</form>
+	  </div>
+	  <div class="modal-footer">
+			<button type="button" 
+				id="continue" 
+				class="btn btn-primary">Submit
+			</button>
+			<button type="button" 
+				id="reset" 
+				class="btn btn-secondary">Reset
+			</button>
+			<button type="button" 
+				id="cancel" 
+				class="btn btn-secondary" 
+				data-dismiss="modal">Close
+			</button>
+	  </div>
+	</div>
+  </div>
+</div>
+</div>
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Strings</h2>
+
+<p>The split() method splits a string into an array of substrings, and returns the array.</p>
+
+<h3>Split the string</h3>
+<p id="demo1"></p>
+<h3>Look for quotation delimiters</h3>
+<p>Index, Has Starting Quote?, Content, Next Element</p>
+<p id="demo2"></p>
+<h3>Resulting JSON</h3>
+<p id="demo3"></p>
+
+<script>
+let txt = "";
+var dataStr, headerStr, outStr, jsonStr;
+
+let header = 'Office,Order,firstName,lastName,votes,Address,Town,zipCode,phone,email';
+
+
+let str = 'Chittenden,"BURLINGTON",,CHRISTOPHER AARON,FELKER,"137 PARK ST, 5",Burlington,05401,802-540-8135,christopher.aaron.felker@gmail.com,Chair';
+
+
+// Separate values by commas.
+var headerArr = header.split(",");
+var dataArr = str.split(",");
+
+// Look for beginning and ending quotes.
+//myArr.forEach(gatherQuotes);
+
+txt = "";
+dataArr.forEach(myList);
+document.getElementById("demo1").innerHTML = txt;
+
+outStr = "";
+dataArr.forEach(gatherQuotes);
+document.getElementById("demo2").innerHTML = outStr;
+
+/*
+txt = "";
+headerArr.forEach(myList);
+document.getElementById("demo3").innerHTML = txt;
+*/
+
+jsonStr = jsonFromList(headerArr, dataArr);
+document.getElementById("demo3").innerHTML = jsonStr;
+
+
+function addQuotes(string) {
+	let rStr = string ;
+	if (!string.startsWith('"')){rStr =  '"' + string + '"';}
+    return rStr ;
+}
+
+function myList(value) {
+  txt += value.trim() + "<br/>"; 
+}
+
+
+function gatherQuotes(value, index, array) {
+
+	const delimiter = ", ";
+  	outStr += index.toString() + ", " + value.startsWith('"');
+    
+    // Combine elements between quotation marks.
+    var next = index + 1;
+    if (value.startsWith('"') && !value.endsWith('"')) {
+        
+        // Gather subsequent array values until the end quote is found.
+		do {
+			array[index] += delimiter + array[next];
+			array.splice(next, 1);
+		}
+        while (!array[index].endsWith('"'))
+	}
+    outStr += delimiter + array[index] + delimiter + next.toString() + "<br/>";
+}
+
+function jsonFromList(headerArr,dataArr){
+
+	var i, cols, jsonStr;
+	const delimiter = ", ";
+	cols = headerArr.length ;
+	jsonStr = "{";
+	for (i=0; i < cols; i++) {
+		jsonStr += addQuotes(headerArr[i]) + " : " + addQuotes(dataArr[i]);
+        if (i < cols-1) {jsonStr += delimiter ;}
+	}
+    jsonStr += "}" ;
+    return jsonStr ;
+}
+</script>
+
+</body>
+</html>

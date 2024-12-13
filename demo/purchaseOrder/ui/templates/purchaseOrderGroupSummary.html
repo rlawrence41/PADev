@@ -1,0 +1,88 @@
+</div>
+<!-- PurchaseOrder Detail End -->
+
+<!-- Group Summary Start -->
+
+<div id="rptSummary">
+<table class="no-inner-borders">
+
+{content}
+
+</table>
+
+<table class="no-borders">
+<tr>
+	<td width="25%" height="20px"><strong>Non Taxable Subtotal:</strong></td>
+	<td width="25%">${noTaxSubtotal}</td>
+	<td width="25%" height="20px"><strong>Subtotal:</strong></td>
+	<td width="25%">${subtotal}</td>
+</tr>
+<tr>
+	<td width="25%" height="20px"><strong>Ship Via:</strong></td>
+	<td width="25%">{courierSearch}</td>
+	<td width="25%"><strong>Ship Charge</strong></td>
+	<td width="25%">${shipCharge}</td>
+</tr>
+<tr>
+	<td width="25%" height="20px"><strong>Taxed?</strong></td>
+	<td width="25%">{lTaxableStr}</td>
+	<td width="25%" height="20px"><strong>Tax Shipping?</strong></td>
+	<td width="25%">{lTaxShipStr}</td>
+</tr>
+<tr>
+	<td width="25%" height="20px"><strong>State Sales Tax Rate:</strong></td>
+	<td width="25%">{stateTaxRate}%</td>
+	<td width="25%"><strong>State Tax</strong></td>
+	<td width="25%">${stateTax}</td>
+
+</tr>
+<tr>
+	<td width="25%" height="20px"><strong>Local Sales Tax Rate:</strong></td>
+	<td width="25%">{localTaxRate}%</td>
+	<td width="25%"><strong>Local Tax</strong></td>
+	<td width="25%">${localTax}</td>
+</tr>
+<tr>
+	<td width="25%">&nbsp;</td>
+	<td width="25%">&nbsp;</td>
+	<td width="25%" height="20px"><strong>Total:</strong></td>
+	<td width="25%"><strong>${total}</strong></td>
+</tr>
+<tr>
+	<td width="25%" height="20px">
+		<strong>Terms:</strong></td>
+	<td width="75%" colspan="3">{terms}&nbsp;&nbsp;{termsDesc}</td>
+</tr>
+</table>
+
+<table class="no-inner-borders">
+<tr>
+	<td class="transNav" id="Bill To" title="Click to select the billing contact for this purchase order."
+		onclick='launchStep({id}, "Bill To", "id", {customerNo})'>
+		<strong>Billing Address:</strong> 
+	</td>
+	<td colspan="3">{customerIdSearch}</td>
+</tr>
+</table>
+
+<table style="min-height: 75px;">
+<tr>
+	<th width="100%" colspan="4" height="20px"><strong>Comments:</strong></th>
+</tr>
+<tr>
+	<td width="100%" colspan="4" >{comment}</td>
+</tr>
+</table>
+</div>
+
+<!-- Report processing options -->
+<div class="noPrint"; style="text-align: center;">
+  <div style="display: inline-block;">
+	<button class="aniButton" onClick="postProcessPO({id})">Process</button>
+	<button class="aniButton" onClick="alert('You pressed ' + this.innerText + '!');">Cancel</button>
+	<button class="aniButton" onClick="window.print()");>Print</button>
+	<button class="aniButton" onClick="postPaymentForOrder({id}, {supplierNo}, {total}, '{status}')");>Payment</button> 
+  </div>
+</div>
+
+<!-- Group Summary End -->

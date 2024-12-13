@@ -1,0 +1,68 @@
+<style>
+.songButton {
+  width: 300px;
+}
+</style>
+
+<div id="audioPlayer">
+<audio id="myAudio" style="height:30px;" onload()="setProperties()" controls>
+  <source src="" type="audio/mp3">
+Your browser does not support the audio element.
+</audio>
+<p id="songTitle">Song title goes here.</p>
+
+</div>
+
+<script>
+
+// Audio player and caption initial settings.
+var aud = document.getElementById("myAudio");
+var sTitle = document.getElementById("songTitle");
+aud.volume = 0.6;
+aud.loop = false;
+sTitle.innerText = "Promises I Kept";
+aud.src = "https://drive.google.com/uc?export=open&id=1efHRnnnaoP5LNYm5jMqhsLbPi7W080hZ";
+
+// List of songs to play.
+var clips = [
+{title:"Promises I Kept", id:"1efHRnnnaoP5LNYm5jMqhsLbPi7W080hZ"},
+{title:"Have I Told You", id:"1yUsggyifGLkBCvUnuVaczGsXK3yAjd6J"},
+{title:"My Boy Can Do Country Too", id:"1leNyjX-DyL_msN5m-kw1EKLNsFciPoDV"},
+{title:"I'm Sorry", id:"1UxV0fEZS_vyfsgqRU9L9TIrlAnex2yAK"},
+{title:"Hospital Greens", id:"1CHwr4Gkbz7q6XSrX1BJtvz7UuO2_qrwM"},
+{title:"Let'em See the Love", id:"1E7Zu30gq_Io44BJ70uDoSKtnULc4bqwF"},
+{title:"Just a Waste of Time", id:"185lkwWquKdYZryo3HozOQKs70THa5a8x"}
+];
+
+// Build a button for each song in the list.
+var i = 0;
+while (i < clips.length) {
+  makeButton(i);
+  i++;
+}
+
+
+function playClip(i) {
+
+  var URLprefix = "https://drive.google.com/uc?export=open&id="
+  sTitle.innerText = clips[i].title;
+  aud.src = URLprefix + clips[i].id;
+  aud.play();
+}
+
+// Creates a new button for the submitted index to clips[].
+function makeButton(i) {
+
+  var btn = document.createElement("BUTTON");
+  var t = document.createTextNode(clips[i].title);
+  var br = document.createElement("BR");
+  btn.appendChild(t);
+  btn.onclick = function (){playClip(i);};
+  btn.className = "songButton";
+  
+  document.getElementById("audioPlayer").appendChild(br);
+  document.getElementById("audioPlayer").appendChild(btn);
+}
+
+</script> 
+

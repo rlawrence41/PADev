@@ -1,0 +1,27 @@
+
+<div class="accordion" id="{htmlId}">
+  <div class="card">
+    <div class="card-header" id="{htmlId}Head">
+      <h2 class="mb-0">
+        <button class="btn btn-link" 
+			type="button" 
+			data-toggle="collapse" 
+			data-target="#{htmlId}Div" 
+			aria-expanded="true" 
+			aria-controls="{htmlId}Div">
+		  {title}
+        </button>
+      </h2>
+    </div>
+
+    <div id="{htmlId}Div" 
+		class="collapse show" 
+		aria-labelledby="{htmlId}Head" 
+		data-parent="#{htmlId}">
+      <div class="card-body">
+
+{content}
+      </div>
+    </div>
+  </div>
+</div>

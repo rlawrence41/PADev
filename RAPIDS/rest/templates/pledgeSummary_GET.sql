@@ -1,0 +1,2 @@
+select project_no, project_id, projectname, format(estimated_cost, 0) as estimated_cost, description_url, format(amount, 0) as pledges, format(percent, 0) as percent, status
+  from pledgeSummary  %where% %orderBy% %limit% ;

@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en">
+<body id="{htmlId}">
+
+<h1>{title}</h1>
+
+{description}
+
+</body>
+</html>

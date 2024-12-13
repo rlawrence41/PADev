@@ -1,0 +1,42 @@
++----------------------------+--------------+---------------------------------------------------------------------------------------+
+| routine_name               | routine_type | routine_comment                                                                       |
++----------------------------+--------------+---------------------------------------------------------------------------------------+
+| getInventoryStatus         | FUNCTION     | Returns the inventory count for the submitted title, condition and location.          |
+| deleteCustomerOrder        | PROCEDURE    | Removes a customer order and related records.                                         |
+| deleteCustomerReturn       | PROCEDURE    | Removes a customer return and related records.                                        |
+| deletePurchaseOrder        | PROCEDURE    | Removes a purchase order and related records.                                         |
+| deleteReceipt              | PROCEDURE    | Removes a receipt and related records.                                                |
+| getItemDetails             | PROCEDURE    | Captures item receipt details for calculating liabilities.                            |
+| getItemsToPay              | PROCEDURE    | Gathers candidate items to apply funds to.                                            |
+| getItemsToPayCount         | PROCEDURE    | Counts the candidate items to apply funds to.                                         |
+| getLiabilitySpecs          | PROCEDURE    | Returns liability spec's that are pertinent to the submitted item.                    |
+| getOrdersToPay             | PROCEDURE    | Gathers candidate customer orders and returns to apply funds to.                      |
+| getOrdersToPayCount        | PROCEDURE    | Counts the candidate customer orders and returns to apply funds to.                   |
+| getOwnerContact            | PROCEDURE    | Returns the current owner contact for the application.                                |
+| newCustomerOrder           | PROCEDURE    | Generates a new customer order with appropriate defaults.                             |
+| newCustomerReturn          | PROCEDURE    | Generates a new customer return with appropriate defaults.                            |
+| newKeyBatchNo              | PROCEDURE    | Generates or updates the print batch number key.                                      |
+| newKeyInvoice              | PROCEDURE    | Generates or updates the invoice number key for a customer order.                     |
+| newKeyPO                   | PROCEDURE    | Generates or updates the purchase order number key.                                   |
+| newKeyReturn               | PROCEDURE    | Generates or updates the return number key for a customer return.                     |
+| newPurchaseOrder           | PROCEDURE    | Generates a new purchase order with appropriate defaults.                             |
+| newReceipt                 | PROCEDURE    | Generates a new customer receipt with appropriate defaults.                           |
+| postAllReceiptsLiabilities | PROCEDURE    | Calls postReceiptLiabilities() for all receipts.  Use to initialize title liabilities. |
+| postItemReceipts           | PROCEDURE    | Generates item receipts for a receipt transaction.                                    |
+| postOrderReceipts          | PROCEDURE    | Generates order receipts for a receipt transaction.                                   |
+| postOrderTotal             | PROCEDURE    | Posts the order total to the customer's account.                                      |
+| postPOTotal                | PROCEDURE    | Posts the purchase order total to the ledger.                                         |
+| postProcessCustomerOrder   | PROCEDURE    | Executes the post-process for the submitted customer order.                           |
+| postProcessCustomerReturn  | PROCEDURE    | Executes the post-process for the submitted customer return.                          |
+| postProcessPO              | PROCEDURE    | Executes the post-process for the submitted purchase order.                           |
+| postProcessReceipt         | PROCEDURE    | Executes the post-process for the submitted receipt.                                  |
+| postReceiptLiabilities     | PROCEDURE    | Calls postTitleLiabilities() for items associated with a receipt.                     |
+| postReturnTotal            | PROCEDURE    | Posts the return total to the customer's account.                                     |
+| postTitleLiabilities       | PROCEDURE    | Posts liabilities to the ledger for an item receipt.                                  |
+| receiveItems               | PROCEDURE    | Posts inventory transactions for the submitted purchase order.                        |
+| returnItems                | PROCEDURE    | Posts inventory transactions for the submitted customer return.                       |
+| shipItems                  | PROCEDURE    | Posts inventory transactions for the submitted customer order.                        |
+| showStoredProcedures       | PROCEDURE    | Displays this list of procedures.                                                     |
+| unshipItems                | PROCEDURE    | Removes inventory transactions for the submitted order.                               |
+| xferOrderItems             | PROCEDURE    | Moves ordered items to the inventory location of the ship to address.                 |
++----------------------------+--------------+---------------------------------------------------------------------------------------+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("a").click(function(event){
+    event.preventDefault();
+    alert("Was preventDefault() called: " + event.isDefaultPrevented());
+  });
+});
+</script>
+</head>
+<body>
+
+<a href="https://w3schools.com/">Go to W3Schools.com</a>
+
+<p>The preventDefault() method will prevent the link above from following the URL.</p>
+<p>Click the link and check if the default action is prevented.</p>

@@ -1,0 +1,49 @@
+<!-- Table Top Controls -->
+<div style="background-color:gray;">
+  <div class="row">
+	<div class="col" id="filterCtrls">
+		<img src="/images/Add_50.png"
+			id="addButton"
+			onclick="newInstance()" 
+			title="Add a new instance to the table">
+		</img>		
+		<img src="/images/filter_button_50.png"
+			id="filterButton"
+			onclick="newFilter()" 
+			title="Set a filter on the table">
+		</img>		
+		<img src="/images/filter_clear_50.png"
+			id="filterClear"
+			onclick="clearFilter()"
+			title="Clear the current filter condition">
+		</img>		
+	</div>
+	<div class="col" id="filterStr">
+	  {filterStr}
+	</div>
+	<div class="col" id="downloadCtrls">
+		<img src="/images/DownloadCSV_50.png"
+			id="downloadCSVbutton"
+			onclick="downloadCSV()" 
+			title="Download a CSV file for the current context">
+		</img>		
+		<img src="/images/Report-50.png"
+			id="reportButton"
+			onclick="report()" 
+			title="Generate a report for the current context">
+		</img>		
+	</div>
+	<div class="col" id="sortBy">
+	  {sortBy}
+	</div>
+	<div class="col" id="clearSortBy">
+		<img src="/images/sort_clear50.png"
+			id="sortClearbutton"
+			onclick="clearSortBy()" 
+			title="Clear the current sort order for the table.">
+		</img>		
+	</div>
+  </div>
+</div>
+
+<!-- End Table Top Controls -->

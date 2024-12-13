@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Strings</h2>
+
+<p>The split() method splits a string into an array of substrings, and returns the array.</p>
+
+<h3>Split the string</h3>
+<p id="demo1"></p>
+<h3>Look for quotation delimiters</h3>
+<p>Index, Has Starting Quote?, Content, Next Element</p>
+<p id="demo2"></p>
+<h3>Resulting JSON</h3>
+<p id="demo3"></p>
+
+<script src='common/ui/js/CSV.js'></script>
+<script>
+let headerStr = 'Office,Order,firstName,lastName,votes,Address,Town,zipCode,phone,email';
+let csvStr = 'Chittenden,"BURLINGTON",,CHRISTOPHER AARON,FELKER,"137 PARK ST, 5",Burlington,05401,802-540-8135,christopher.aaron.felker@gmail.com,Chair';
+
+csvObj = new CSV(headerStr);  // Create an object of CSV class.
+csvObj.csvStr = csvStr;		  // Will need to be assigned separately in general use.
+csvObj.CSVtoJSON();
+
+document.getElementById("demo1").innerHTML = csvObj.textStr;
+document.getElementById("demo2").innerHTML = csvObj.outStr;
+document.getElementById("demo3").innerHTML = csvObj.jsonStr;
+
+</script>
+
+</body>
+</html>

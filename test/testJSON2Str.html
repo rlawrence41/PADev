@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Convert a JSON object to a list of strings</h1>
+
+<p id="demo"></p>
+
+<p><a href="/">Back to the Test menu</a></p>
+
+<script>
+
+var jsonData = [{"contact_no":"66919","contact_id":"","company":"Jericho Road Crew","last_name":"Lawrence","first_name":"Ron","po_addr":"41 Lawrence Hts","city":"Jericho","state_abbr":"VT","zip_code":"05465","country":"","email":"ron@jerichoroadcrew.com"},{"contact_no":"68019","contact_id":"","company":"Publishers\' Assistant","last_name":"Lawrence","first_name":"Ron","po_addr":"41 Lawrence Heights","city":"Jericho","state_abbr":"VT","zip_code":"05465","country":"","email":"rlawrence@pubassist.com"}];
+var list = json2String(jsonData);
+document.getElementById("demo").innerHTML = list;
+
+
+function json2String(jsonArray){
+	var instance, instanceStr;
+	var list = "";
+//	var json = JSON.parse(jsonData)
+
+	for (n in jsonArray){
+		instance = jsonArray[n];
+		instanceStr = "";
+		for (i in instance){
+			if (instance[i].length > 0){
+				if (instanceStr.length > 0) {instanceStr += ", " }
+				instanceStr += instance[i];
+			}
+		}
+		list += instanceStr + "<br/>\n";
+	}
+
+	return list;
+}
+
+</script>
+
+</body>
+</html>

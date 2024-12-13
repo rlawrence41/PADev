@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.aniButton {
+  margin: 10px;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  text-shadow: 2px 2px #000c93;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #0427d6;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 5px 9px 3px #999;
+}
+
+.aniButton:hover {background-color: #2c4ff9}
+
+.aniButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translate(2px, 4px);
+}
+</style>
+</head>
+<body>
+
+<h2>Animated Buttons - "Pressed Effect"</h2>
+
+<button class="aniButton" onClick="alert('You pressed ' + this.innerText + '!');">Process</button>
+<button class="aniButton" onClick="alert('You pressed ' + this.innerText + '!');">Cancel</button>
+</body>
+</html>

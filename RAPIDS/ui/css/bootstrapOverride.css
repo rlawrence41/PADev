@@ -1,0 +1,72 @@
+/*	block buttons */
+.button-block-div {
+	margin 20px;
+}
+
+
+/* Prevent checkboxes from floating to the next line! */
+input[type=checkbox], 
+input[type=radio] {
+    width: 25px;
+    display: unset;
+}
+
+/* Page navigation */
+.page-link{
+	height : 47px;
+}
+
+.page-link button{
+	margin-top : -4px;
+}
+
+/*  Non-modal form */
+.standard-form-div {
+	border-style: solid;
+	border-color: lightgrey;
+	border-width: 1 px;
+	margin: 20px;
+	padding: 20px;
+	width: 75%;
+	border-radius: 25px;
+	box-shadow: 15px 15px 10px grey;
+}
+
+/*  class="standard-footer" */
+.standard-footer {
+	margin-top: 20px;
+}
+
+/* .widget {
+	border-style: solid;
+	border-color: lightgrey;
+	border-width: 1 px;
+/*	margin: 20px; 
+	padding: 20px;
+	margin-bottom: 20px;
+/*	width: 75%; 
+	border-radius: 25px;
+	box-shadow: 15px 15px 10px grey;
+	overflow: scroll;
+} */
+	
+/* class="messageBox" */
+.messageBox {
+	background-color: lightgrey;
+	border: 1px solid lightgrey;
+	border-radius: .5rem;
+	width: 75%;
+	margin: 20px;
+	padding: 20px;
+	
+}
+
+.messageBoxTitle {
+    background-color: white;
+    width: fit-content;
+    margin-top: -20px;
+    padding: 10px;
+    border-style: solid;
+    border-radius: inherit;	
+    font-size: xx-large;
+}

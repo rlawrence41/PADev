@@ -1,0 +1,38 @@
+<?php
+
+
+include ('includes.php');
+include_once('demo/contact/includes.php');
+include_once('demo/orders/includes.php');
+include_once('demo/orderItem/includes.php');
+include_once('demo/receipt/includes.php');
+
+
+$includedFiles = get_included_files();
+$includePath = explode(":", get_include_path());
+?>
+
+<html>
+<body>
+<h1>Test Includes</h1>
+
+<p align="center"><b><i>
+Adding a path to the include path is
+NOT the same thing as
+including a procedure file!
+</i></b></p>
+
+<h2>Included Files:</h2>
+<pre>
+<?php print_r($includedFiles); ?>
+</pre>
+
+<h2>Include Path:</h2>
+<pre>
+<?php print_r($includePath); ?>
+</pre>
+
+<p><a href="/">Back to the Test menu</a></p>
+
+</body>
+</html>

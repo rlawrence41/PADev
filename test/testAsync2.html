@@ -1,0 +1,44 @@
+<h1>JavaScript async / await</h1>
+
+<p>This procedure uses an async function to wait for the completion of FileReader.</p>
+
+<h2>Read a CSV File</h2>
+<input type="file" value="Choose CSV File" id="csvFile"
+	   accept="text/*.txt,text/*.csv" onchange="readFileA(displayContent)"/>
+<br/>
+<div id="demoShowA"></div>
+<br/>
+<div id="demoShowB"></div>
+<br/>
+<p id="demo"></p>
+
+<script>
+
+function displayContent(fileContent){
+	document.getElementById("demo").innerHTML = fileContent;
+}
+
+function readFileA (myCallback) {
+	// (A) GET SELECTED FILE
+	let selected = document.getElementById("csvFile").files[0];
+
+	// (B) READ SELECTED FILE
+	let reader = new FileReader();
+
+	// Content is not available until load is complete.
+	reader.onload = function() {
+		document.getElementById("demoShowA").innerHTML = "Read CSV File completed!";
+        myCallback(reader.result);
+	}; 
+    
+	// Execute the file read.
+	document.getElementById("demoShowA").innerHTML = "Preparing to read selected file.";
+	reader.readAsText(selected);	  
+
+}
+document.getElementById("demoShowA").innerHTML = "Choose a CSV file to read.";
+getFile(displayContent);
+</script>
+
+</body>
+</html>

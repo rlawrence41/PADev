@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liberty Checks Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page {
+            width: 8.5in;
+            height: 11in;
+            padding: 0.25in; /* Adjust for pre-printed edges */
+            box-sizing: border-box;
+        }
+
+        .check {
+            width: 8.5in;
+            height: 2.75in;
+            margin-bottom: 0.25in;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .left-panel {
+            position: absolute;
+
+			left: 0.625in;
+			top: 0.75in;
+            width: 2.5in; /* Left panel width */
+            height: 100%;
+            border-right: 1px solid #000; /* Reference for layout; remove for printing */
+            padding: 0.25in;
+            box-sizing: border-box;
+        }
+
+        .left-panel div {
+            margin-bottom: 0.25in;
+        }
+
+        .date-line {
+            position: absolute;
+            top: 1in;
+            right: 0.5in; /* Right-aligned for pre-printed details */
+            text-align: right;
+        }
+
+        .payee-line {
+            position: absolute;
+            top: 1.5in;
+            left: 3in;
+        }
+
+        .amount-line {
+            position: absolute;
+            top: 1.5in;
+            right: 0.5in;
+            text-align: right;
+        }
+
+        .amount-words-line {
+            position: absolute;
+            top: 2in;
+            left: 3in;
+            width: calc(8.5in - 3.5in);
+            overflow: hidden;
+        }
+
+        .memo-line {
+            position: absolute;
+            top: 2.25in;
+            left: 3in;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Check 1 -->
+        <div class="check">
+            <div class="left-panel">
+                <!-- Left panel details -->
+                <div>Details: {details}</div>
+            </div>
+            <div class="date-line">
+                Date: {date}
+            </div>
+            <div class="payee-line">
+                Pay to the Order of: {payee}
+            </div>
+            <div class="amount-line">
+                ${amount}
+            </div>
+            <div class="amount-words-line">
+                Amount in Words: {amount_words}
+            </div>
+            <div class="memo-line">
+                Memo: {memo}
+            </div>
+        </div>
+
+        <!-- Check 2 -->
+        <div class="check">
+            <div class="left-panel">
+                <div>Details: {details}</div>
+            </div>
+            <div class="date-line">
+                Date: {date}
+            </div>
+            <div class="payee-line">
+                Pay to the Order of: {payee}
+            </div>
+            <div class="amount-line">
+                ${amount}
+            </div>
+            <div class="amount-words-line">
+                Amount in Words: {amount_words}
+            </div>
+            <div class="memo-line">
+                Memo: {memo}
+            </div>
+        </div>
+
+        <!-- Check 3 -->
+        <div class="check">
+            <div class="left-panel">
+                <div>Details: {details}</div>
+            </div>
+            <div class="date-line">
+                Date: {date}
+            </div>
+            <div class="payee-line">
+                Pay to the Order of: {payee}
+            </div>
+            <div class="amount-line">
+                ${amount}
+            </div>
+            <div class="amount-words-line">
+                Amount in Words: {amount_words}
+            </div>
+            <div class="memo-line">
+                Memo: {memo}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

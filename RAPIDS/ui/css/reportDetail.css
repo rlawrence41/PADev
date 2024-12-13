@@ -1,0 +1,129 @@
+/* Global styles */
+body {
+	font-family: sans-serif;
+    width: 675px; /* width: 7in; */
+	margin: 0 auto;
+}
+
+/* Table styles */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid;
+    text-align: center;
+}
+
+th,
+td {
+    border: 1px solid;
+}
+
+/* Heading styles */
+.heading {
+    vertical-align: bottom;
+    font-weight: bold;
+}
+
+/* Vertical column heading styles */
+.verticalCH {
+    transform: rotate(-90deg);
+    width: 20px;
+    height: 150px;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 8pt;
+}
+
+.report-container {
+/*	height: 80vh; *Not helpful*//* Limit the height to 100% of the viewport height */
+    padding: 0px;
+/*    width: 675px;  /* width: 7in; */
+/*    height: 900px; /* or height: 9.5in; */
+	margin: 10 auto; /* Center the container horizontally */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    border: 1px solid #000; /* Adjust the border color and style as needed */
+
+}
+
+/* Report content styles */
+.report-content {
+    font-size: min(1em, 3vw); /* Set font size to 1em or 3% of viewport width, whichever is smaller */
+}
+
+/* Logo styles */
+.logo img{
+    max-width: 100%; /* Ensure the logo does not exceed its parent container's width */
+    max-height: 100%; /* Maintain the aspect ratio */
+    object-fit: contain;
+}
+
+/* Adjust font sizes for smaller screens */
+@media (max-width: 768px) {
+    .report-content {
+        font-size: 0.8em; /* Adjust font size for smaller screens */
+    }
+}
+
+.report-container h3 {
+    font-size: min(1em, 3vw); /* Set font size to 1em or 3% of viewport width, whichever is smaller */
+}
+
+/* Elements to launch a step in a transaction wizard. */
+.transNav {
+	background-color: #89BDF0;
+}
+
+
+
+/* Print-specific styles */
+
+@media print {
+    body {
+/*        margin: 0;
+        padding: 0;    */
+        width: 100%;
+        height: 100%;
+        display: flex;
+/*        align-items: center;   Center vertically */
+        justify-content: center;  /* Center horizontally */
+    }
+
+    .report-container {
+        width: 100%;  /* Adjust width as needed to leave margins */
+        padding: 20px;  /* Add padding to leave space around the content */
+        box-sizing: border-box;  /* Include padding in the width */
+    }
+	
+    .noPrint, .noPrint *
+    {
+        display: none !important;
+    }	
+}
+
+
+/* Animated buttons */
+.aniButton {
+  margin: 10px 10px 25px 0px;
+  padding: 15px 20px;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 2px 2px #000c93;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #0427d6;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 5px 9px 3px #999;
+}
+
+.aniButton:hover {background-color: #2c4ff9}
+
+.aniButton:active {
+  background-color: #010ea0;
+  box-shadow: 0 5px #666;
+  transform: translate(2px, 4px);
+}

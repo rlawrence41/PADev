@@ -1,0 +1,38 @@
+<?php
+
+// This procedure is used to test the table class.  View the page source
+//	to verify whether the appropriate HTML was generated.
+
+include_once ("includes.php");
+include_once ("standardMenu.class.php");
+include_once ("loginForm.class.php");
+include_once ("contactForm.class.php");
+include_once ("contactTable.class.php");
+
+
+$page = new webObj("testTable", "", "Test Table Class");
+$page->template = "pageBootstrap2.html";
+
+$menu = new standardMenu();
+$page->addChild($menu);
+
+$form = new loginForm();
+$page->addChild($form);
+
+$form = new contactForm();
+$page->addChild($form);
+
+$pageNav = new pageNav
+
+$table = new contactTable();
+$page->addChild($table);
+
+$html = $page->render();
+echo $html;
+
+print_r($table);
+?>
+
+
+<p><a href="/">Back to the test menu</a></p>
+

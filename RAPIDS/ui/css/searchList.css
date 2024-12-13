@@ -1,0 +1,27 @@
+/* The following dictates the appearance of the search list */
+div.searchList {
+	position: static; /* to position directly below the input element that activates the list. */
+	background-color: white;
+	margin: 20px;
+	padding: 10px;
+	box-shadow: 10px 10px 30px gray;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+div.searchList ul {
+  list-style-type: none ;
+  padding-inline-start: 0px;
+}
+
+div.searchList li:hover {
+  background-color: lightgray;
+}
+
+div.searchList a:link {
+  text-decoration: none;
+}
+
+div.card-body {
+  min-height: 500px;
+}

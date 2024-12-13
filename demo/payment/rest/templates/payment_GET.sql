@@ -1,0 +1,1 @@
+select id, transDate, transEvent, transType, accountNo, accountIdSearch, acctType, amount, payAmount, docNo, orderKey, orderNo, itemNo, receiptNo, specNo, lExported, comment, updatedBy, userNo, lastUpdated from %resource% %where% %orderBy% %limit% ;

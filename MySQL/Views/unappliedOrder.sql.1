@@ -1,0 +1,21 @@
+DROP VIEW if exists unappliedOrder;
+CREATE SQL SECURITY INVOKER VIEW unappliedOrder AS 
+select 
+	orc.id AS applied,
+	orc.id AS id,
+	o.id AS orderKey,
+	o.orderType,
+	if(o.orderType = "R", convert(o.orderNo,char(13)),
+		concat_ws("-",convert(o.orderNo,char(10)), convert(o.invoiceNo, char(2)))) 
+		AS orderStr,
+	orc.receiptNo,
+	o.customerNo,
+	concat_ws(", ",cust.lastName, cust.firstName, cust.company) as customerIdSearch,
+	if(o.orderType = "R", -o.total, o.total) AS total, 
+	if(o.orderType = "R",-(o.shipCharge + o.stateTax + o.localTax + o.adjustment1 + o.adjustment2),
+	(o.shipCharge + o.stateTax + o.localTax + o.adjustment1 + o.adjustment2))
+		AS surcharges,
+	if(orc.orderPaid is NULL, 0000000.00, orc.orderPaid) as orderPaid
+FROM orders o JOIN contact cust ON cust.id = o.customerNo
+LEFT JOIN orderReceipt orc ON orc.orderKey = o.id
+LEFT JOIN receipt rc ON rc.id = orc.receiptNo;

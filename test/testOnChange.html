@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("a").click(function(event){
+    event.preventDefault();
+    alert("Was preventDefault() called: " + event.isDefaultPrevented());
+  });
+  $(".page-link").click(function(event){
+    alert("You clicked the page-link span.");
+  });
+});
+</script>
+</head>
+<body>
+
+<div style="width:50%;background-color:lightgreen;height:50px;border-radius:5px;">
+  <span class="page-link" id="pgctl{id}">
+	Nothing but a SPAN here.
+  </span>
+</div>
+
+</body>
+</html>

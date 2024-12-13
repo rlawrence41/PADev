@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Printing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+        }
+        .check {
+            width: 8.5in;
+            height: 2.8125in; /* One-third of 8.5in page height */
+            padding: 0.0625in; /* Account for the slight margin */
+            box-sizing: border-box;
+            border: 1px solid #ccc; /* For debugging layout, remove later */
+            position: relative;
+        }
+        .left-panel {
+            width: 2.5in;
+            height: 100%;
+            float: left;
+            padding: 0.125in;
+            box-sizing: border-box;
+        }
+        .right-panel {
+            margin-left: 2.5in;
+            padding-left: 0.0625in;
+            box-sizing: border-box;
+        }
+        .page-break {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <?php
+    $result_set = [
+        ["payee" => "John Doe", "amount" => "123.45", "memo" => "Invoice 001", "date" => "12/09/2024", "amount_words" => "One Hundred Twenty-Three and 45/100"],
+        ["payee" => "Jane Smith", "amount" => "678.90", "memo" => "Invoice 002", "date" => "12/10/2024", "amount_words" => "Six Hundred Seventy-Eight and 90/100"],
+        ["payee" => "ACME Corp", "amount" => "234.56", "memo" => "Invoice 003", "date" => "12/11/2024", "amount_words" => "Two Hundred Thirty-Four and 56/100"],
+    ];
+    foreach ($result_set as $index => $check) {
+        ?>
+        <div class="check">
+            <!-- Left Panel -->
+            <div class="left-panel">
+                <p>{date}: <?= htmlspecialchars($check['date']) ?></p>
+                <p>{payee}: <?= htmlspecialchars($check['payee']) ?></p>
+                <p>{amount}: $<?= htmlspecialchars($check['amount']) ?></p>
+                <p>{memo}: <?= htmlspecialchars($check['memo']) ?></p>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="right-panel">
+                <p>{date}: <?= htmlspecialchars($check['date']) ?></p>
+                <p>{payee}: <?= htmlspecialchars($check['payee']) ?></p>
+                <p>{amount}: $<?= htmlspecialchars($check['amount']) ?></p>
+                <p>{amount_words}: <?= htmlspecialchars($check['amount_words']) ?></p>
+                <p>{memo}: <?= htmlspecialchars($check['memo']) ?></p>
+            </div>
+        </div>
+
+        <!-- Add a page break after every third check -->
+        <?php if (($index + 1) % 3 == 0 && $index + 1 < count($result_set)) { ?>
+            <div class="page-break"></div>
+        <?php } ?>
+    <?php } ?>
+</body>
+</html>

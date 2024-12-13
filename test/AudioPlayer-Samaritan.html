@@ -1,0 +1,72 @@
+<style>
+.songButton {
+  width: 250px;
+}
+</style>
+
+<div id="audioPlayer2">
+<audio id="myAudio1" style="height:30px;" onload()="setProperties()" controls>
+  <source src="" type="audio/mp3">
+Your browser does not support the audio element.
+</audio>
+<p id="songTitle">Song title goes here.</p>
+
+</div>
+
+<script>
+
+// Audio player and caption initial settings.
+var aud = document.getElementById("myAudio1");
+var sTitle = document.getElementById("songTitle");
+aud.volume = 0.6;
+aud.loop = false;
+sTitle.innerText = "Promises I Kept";
+aud.src = "https://music.jerichoroadcrew.com/music/Clips/Clip01Promises.mp3";
+
+// List of songs to play.
+var clips = [
+{title:"Promises I Kept", id:"Clip01Promises.mp3"},
+{title:"Turn It Around", id:"Clip02TurnItAround.mp3"},
+{title:"Have I Told You?", id:"Clip03HaveIToldYou.mp3"},
+{title:"My Boy Can Do Country Too", id:"Clip04MyBoy.mp3"},
+{title:"Is there Something I Can Sing?", id:"Clip05IsThereSomethingICanSing.mp3"},
+{title:"Train Whistle", id:"Clip06TrainWhistle.mp3"},
+{title:"I’m Sorry", id:"Clip07ImSorry.mp3"},
+{title:"Hospital Greens", id:"Clip08Hospital Greens.mp3"},
+{title:"A Little More Jesus, Please", id:"Clip09ALittleMoreJesu.mp3"},
+{title:"Let‘em See the Love", id:"Clip10LetEmSeetheLove.mp3"},
+{title:"That’s What Jesus Is To Me", id:"Clip11ThatsWhatJesusIsToMe.mp3"},
+{title:"Just a Waste of Time", id:"Clip12WasteofTime.mp3""}
+];
+
+// Build a button for each song in the list.
+var i = 0;
+while (i < clips.length) {
+  makeButton(i);
+  i++;
+}
+
+
+function playClip(i) {
+
+  var URLprefix = "https://music.jerichoroadcrew.com/music/Clips/"
+  sTitle.innerText = clips[i].title;
+  aud.src = URLprefix + clips[i].id;
+  aud.play();
+}
+
+// Creates a new button for the submitted index to clips[].
+function makeButton(i) {
+
+  var btn = document.createElement("BUTTON");
+  var t = document.createTextNode(clips[i].title);
+  var br = document.createElement("BR");
+  btn.appendChild(t);
+  btn.onclick = function (){playClip(i);};
+  btn.className = "songButton";
+  
+  document.getElementById("audioPlayer2").appendChild(br);
+  document.getElementById("audioPlayer2").appendChild(btn);
+}
+
+</script> 

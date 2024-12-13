@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Assign an "onchange" event to an input element.</p>
+
+Enter your name: 
+<input type="text" name="fname" onchange="myFunction()">
+<input type="button" value="change" onclick="fireChangeEvent('fname')">
+
+<p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+
+<script>
+function fireChangeEvent(elementName) {
+  const inputElement = document.getElementsByName(elementName)[0];
+  // Set a new value programmatically
+  inputElement.value = "New value"; 
+  // Trigger the onchange event
+  inputElement.dispatchEvent(new Event("change"));
+}
+
+function myFunction() {
+  var x = document.getElementsByName("fname")[0];
+  var message = "Changing, " + x.value + " to upper case.";
+  alert(message);
+  x.value = x.value.toUpperCase();
+}
+</script>
+
+</body>
+</html>
+

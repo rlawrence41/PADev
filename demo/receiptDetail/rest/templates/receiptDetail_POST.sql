@@ -1,0 +1,1 @@
+CALL postProcessReceipt(%key%)
